@@ -1,0 +1,132 @@
+version: "3.3"
+
+networks:
+  covid-central:
+    driver: bridge
+
+volumes:
+  covid-central-data:
+  redis-data:
+  letsencrypt:
+
+services:
+  mongo:
+    container_name: mongo
+    hostname: mongo
+    build:
+      context: ./mongo
+      dockerfile: Dockerfile
+    ports:
+      - "27017:27017"
+    volumes:
+      - covid-central-data:/data/db
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+      - MONGO_INITDB_DATABASE=covid-central
+      - MONGO_INITDB_ROOT_USERNAME=covid-central
+      - MONGO_INITDB_ROOT_PASSWORD=covid-central
+    networks:
+      - covid-central
+
+  redis:
+    container_name: redis
+    hostname: redis
+    image: redis:4.0.10
+    expose:
+      - "6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - covid-central
+
+  frontend:
+    container_name: frontend
+    hostname: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+      args:
+        PUBLIC_URL: /frontend
+    volumes:
+      - /app/node_modules
+    environment:
+      - PORT=3000
+      - COVID_CENTRAL_API_URL=covid.hdap.cloud/backend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.port=3000"
+      - "traefik.http.routers.frontend-secure.rule=PathPrefix(`/frontend`)"
+      - "traefik.http.routers.frontend-secure.entrypoints=websecure"
+      - "traefik.http.routers.frontend-secure.tls.certresolver=mytlschallenge"
+      - "traefik.http.middlewares.frontend-secure-stripprefix.stripprefix.prefixes=/frontend"
+      - "traefik.http.routers.frontend-secure.middlewares=frontend-secure-stripprefix"
+      - "traefik.http.routers.frontend.rule=PathPrefix(`/frontend`)"
+      - "traefik.http.routers.frontend.entrypoints=web"
+      - "traefik.http.middlewares.frontend-https-only.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.frontend-https-only.redirectscheme.port=443"
+      - "traefik.http.routers.frontend.middlewares=frontend-https-only"
+    networks:
+      - covid-central
+
+  backend:
+    container_name: backend
+    hostname: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - /app/node_modules/
+    expose:
+      - "1337"
+    entrypoint:
+      - pm2-runtime
+    command: app.js
+    environment:
+      - NODE_ENV=production
+      - MONGO_USERNAME=covid-central
+      - MONGO_PASSWORD=covid-central
+      - MONGO_HOSTNAME=mongo
+      - MONGO_CONTAINER_PORT=27017
+      - MONGO_DATABASE=covid-central
+      - REDIS_HOSTNAME=redis
+      - REDIS_CONTAINER_PORT=6379
+      - FRONTEND_URL=https://covid.hdap.cloud/frontend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.port=1337"
+      - "traefik.http.routers.backend-secure.rule=PathPrefix(`/backend`)"
+      - "traefik.http.routers.backend-secure.entrypoints=websecure"
+      - "traefik.http.routers.backend-secure.tls.certresolver=mytlschallenge"
+      - "traefik.http.middlewares.backend-secure-stripprefix.stripprefix.prefixes=/backend"
+      - "traefik.http.routers.backend-secure.middlewares=backend-secure-stripprefix"
+      - "traefik.http.routers.backend.rule=PathPrefix(`/backend`)"
+      - "traefik.http.routers.backend.entrypoints=web"
+      - "traefik.http.middlewares.backend-https-only.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.backend-https-only.redirectscheme.port=443"
+      - "traefik.http.routers.backend.middlewares=backend-https-only"
+    networks:
+      - covid-central
+
+  traefik:
+    image: "traefik:v2.1.2"
+    container_name: "traefik"
+    command:
+      - "--log.level=INFO"
+      - "--api=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.mytlschallenge.acme.tlschallenge=true"
+      - "--certificatesresolvers.mytlschallenge.acme.email=trey.schneider@gtri.gatech.edu"
+      - "--certificatesresolvers.mytlschallenge.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - letsencrypt:/letsencrypt
+    networks:
+      - covid-central

@@ -1,0 +1,260 @@
+.page {
+  height: 100%;
+  max-width: 500px;
+  // margin: 20px auto 20px;
+  margin: auto;
+  // border-radius: 20px;
+  background-color: $fill-1;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  flex: 1;
+  position: relative;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+  .nav {
+    flex: 0 0 50px;
+    display: flex;
+    background-color: $fill-2;
+    box-shadow: 0 4px 2px -2px #121212;
+    z-index: 2;
+    a {
+      display: flex;
+      flex: 0 0 50px;
+    }
+    .back-arrow {
+      flex: 1;
+      color: rgba(255, 255, 255, 0.87);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 21px;
+    }
+    .title {
+      flex: 1;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.87);
+      margin-left: 12px;
+      font-weight: 600;
+      .extra {
+        margin-left: 4px;
+        color: #fff59d;
+      }
+    }
+  }
+  .content {
+    overflow-y: scroll;
+  }
+  &.survey {
+    // justify-content: space-between;
+    // padding: 50px 0 30px;
+    .alert {
+      margin: 21px 18px;
+      background-color: #fff9c4;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.10);
+    }
+    .instructions {
+      font-size: 11px;
+      margin: 21px 18px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      .fields {
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.10);
+        margin: 0px 10px 20px;
+        flex: 1;
+        .field {
+          background-color: $fill-2;
+          display: flex;
+          padding: 16px 12px;
+          .label {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-right: 10px;
+            text-align: left;
+            color: rgba(255, 255, 255, 0.80);
+            opacity: 87%;
+          }
+          .control {
+            flex-basis: auto;
+            display: flex;
+            align-items: center;
+            .ant-radio-button-wrapper {
+              border: 1px solid $accent;
+              border-top-width: 1.02px;
+              border-left-width: 0;
+              &:first-child {
+                border-left: 1px solid $accent;
+              }
+              &:not(:first-child)::before {
+                background-color: $accent;
+              }
+            }
+          }
+          &:first-child {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+          }
+          &:last-child {
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+          }
+          &:not(:last-child) {
+            border-bottom: 1px solid $border-tint;
+          }
+          &.is-danger {
+            .label {
+              color: $danger;
+            }
+            .control {
+              .ant-radio-button-wrapper {
+                border: 1px solid $danger;
+                border-top-width: 1.02px;
+                border-left-width: 0;
+                color: $danger;
+                &:first-child {
+                  border-left: 1px solid $danger;
+                }
+                &:not(:first-child)::before {
+                  background-color: $danger;
+                }
+              }
+            }
+          }
+        }
+      }
+      .submit-bar {
+        bottom: 0;
+        height: 50px;
+        position: sticky;
+        background-color: $fill-2;
+        border-top: 1px solid $border-tint;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 18px;
+        z-index: 1;
+        .progress {
+          .text {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.80);
+          }
+          .amount {
+            font-size: 14px;
+            color: $primary2;
+            margin-left: 3px;
+            &.is-danger {
+              color: $danger;
+            }
+          }
+        }
+        .submit-button {
+          text-transform: uppercase;
+          color: $primary2;
+          font-size: 15px;
+          font-weight: 400;
+          border: none;
+          background: none;
+        }
+      }
+    }
+    .ant-steps {
+      padding: 10px 18px;
+      .ant-steps-item {
+        .ant-steps-item-container {
+          .ant-steps-item-icon {
+            background-color: $fill-1;
+            border-color: $primary;
+            .ant-steps-icon {
+              color: $primary;
+            }
+          }
+          .ant-steps-item-content {
+            .ant-steps-item-title {
+              color: rgba(255, 255, 255, 0.80);
+            }
+          }
+        }
+      }
+    }
+  }
+  &.terminal-1 {
+    justify-content: center;
+    .ant-result {
+      .ant-result-icon {
+        .anticon {
+          color: #a5d6a7;
+        }
+      }
+      .ant-result-title {
+        color: rgba(255, 255, 255, 0.87);
+        line-height: 28px;
+        margin-bottom: 10px;
+      }
+      .ant-result-subtitle {
+        color: rgba(255, 255, 255, 0.80);
+      }
+    }
+  }
+  &.terminal-2 {
+    justify-content: center;
+    .ant-result {
+      .ant-result-icon {
+        .anticon {
+          color: #fff59d;
+        }
+      }
+      .ant-result-title {
+        color: rgba(255, 255, 255, 0.87);
+        line-height: 28px;
+        margin-bottom: 10px;
+      }
+      .ant-result-subtitle {
+        color: rgba(255, 255, 255, 0.80);
+        text-align: left;
+      }
+    }
+  }
+  &.terminal-3 {
+    justify-content: center;
+    .ant-result {
+      .ant-result-icon {
+        .anticon {
+          color: #fff59d;
+        }
+      }
+      .ant-result-title {
+        color: rgba(255, 255, 255, 0.87);
+        line-height: 28px;
+        margin-bottom: 10px;
+      }
+      .ant-result-subtitle {
+        color: rgba(255, 255, 255, 0.80);
+        text-align: left;
+        .warning-message {
+          color: #fff59d;
+        }
+      }
+    }
+  }
+  &.welcome {
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.87);
+    a {
+      color: rgba(255, 255, 255, 0.87);
+      text-decoration: underline;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    p {
+      font-size: 13px !important;
+    }
+  }
+}

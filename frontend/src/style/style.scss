@@ -1,0 +1,40 @@
+@import "util/reset";
+@import "util/normalize";
+
+// $primary: #003057;
+$primary: #88C7F8;
+$primary2: #4BB2F9;
+// $background-color: #fff;
+$background-color: #121212;
+// $background-color: #111417; // 8% #fff overlaid on #121212;
+// $fill-1: #0f171e; //18% #fff overlaid on #121212
+$fill-1: #181F24;
+// $fill-2: #0c1d2b; //36% #fff overlaid on #121212
+$fill-2: #1B2A35;
+$border-tint: #2E3D47; //60% #fff overlaid on #003057;
+// $light-orange: #f7e9e7;
+// $very-light-orange: #fcf6f6;
+// $accent: #80cbc4;
+$accent: #4BB2F9;
+$danger: #CF6679;
+// $tabs-toggle-link-border-color: $dark-orange;
+// $tabs-toggle-link-border-width: 2px;
+// $tabs-toggle-link-active-background-color: $dark-orange;
+// $tabs-toggle-link-active-border-color: $dark-orange;
+// $tabs-toggle-link-active-color: $light-orange;
+// $tabs-link-color: $dark-orange;
+// $tabs-toggle-link-hover-background-color: darken($light-orange, 2%);
+// $tabs-toggle-link-hover-border-color: $dark-orange;
+// $tabs-link-hover-color: $dark-orange;
+// $notification-background-color: $very-light-orange;
+// $primary: $dark-orange;
+
+// @import "../../node_modules/bulma/bulma.sass";
+@import '~antd/dist/antd.css';
+
+
+//COMPONENTS
+// @import "components/tabs";
+@import "components/page";
+
+@import "main";
