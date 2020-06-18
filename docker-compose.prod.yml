@@ -92,7 +92,7 @@ services:
       - MONGO_DATABASE=covid-central
       - REDIS_HOSTNAME=redis
       - REDIS_CONTAINER_PORT=6379
-      - FRONTEND_URL=https://covid.hdap.cloud/frontend
+      - FRONTEND_URL=https://covid.hdap.cloud
     labels:
       - "traefik.enable=true"
       - "traefik.port=1337"
