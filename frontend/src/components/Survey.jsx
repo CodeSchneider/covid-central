@@ -10,15 +10,19 @@ import isEmpty from 'lodash/isEmpty';
 const { Step } = Steps;
 
 export default class Survey extends Component {
-  state = {
-    slug: null,
-    loadingSurvey: true,
-    loadedSurvey: false,
-    loadErrorSurvey: false,
-    submittingSurvey: false,
-    submittedSurvey: false,
-    submitErrorSurvey: false,
-    initialValues: {}
+  constructor(props) {
+      super(props)
+      this.state = {
+        slug: null,
+        loadingSurvey: true,
+        loadedSurvey: false,
+        loadErrorSurvey: false,
+        submittingSurvey: false,
+        submittedSurvey: false,
+        submitErrorSurvey: false,
+        initialValues: {}
+      }
+      this.myRef = React.createRef()
   }
 
   handleSubmit = async (values, { setSubmitting, setStatus, resetForm }) => {
@@ -38,6 +42,7 @@ export default class Survey extends Component {
       const { slug } = this.props.match.params;
       const { slug : prevSlug } = prevProps.match.params;
       if (slug !== prevSlug) {
+        this.myRef.current.scrollIntoView({ behavior: 'auto', block: 'start' });
         const { data: {
           content,
           submissionSchema,
@@ -113,12 +118,13 @@ export default class Survey extends Component {
       <div className="page survey">
         <Navbar extra={null}/>
         <div className="content">
-          {navExtra &&
+          {false &&
             <Steps size="small" current={1}>
               <Step title="Finished" />
               <Step title="In Progress" />
             </Steps>
           }
+          <div ref={this.myRef}></div>
           <div className="instructions">
             {instructions}
           </div>
