@@ -11,7 +11,7 @@ export default class Navbar extends Component {
           <div className="back-arrow"><IoMdArrowBack/></div>
         </Link>
         <div className="title">
-          <span>Daily health check</span>
+          <span>Daily symptom check</span>
           { extra &&
             <span className="extra">{extra}</span>
           }
