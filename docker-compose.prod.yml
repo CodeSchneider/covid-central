@@ -106,6 +106,8 @@ services:
       - "traefik.http.middlewares.backend-https-only.redirectscheme.scheme=https"
       - "traefik.http.middlewares.backend-https-only.redirectscheme.port=443"
       - "traefik.http.routers.backend.middlewares=backend-https-only"
+    depends_on:
+      - mongo
     networks:
       - covid-central
 
