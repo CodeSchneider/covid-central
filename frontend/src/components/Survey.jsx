@@ -24,7 +24,6 @@ export default class Survey extends Component {
   handleSubmit = async (values, { setSubmitting, setStatus, resetForm }) => {
     try {
       const { history } = this.props;
-      console.log('PROPS: ',this.props);
       const { slug } = this.state;
       const { data: { next } } = await API.post(`surveys/${slug}/submissions`, values);
       history.push(next);
@@ -143,8 +142,11 @@ export default class Survey extends Component {
                   <>
                     <div className="fields">
                       {content.allIds.map((item, key) =>
-                        <div className={`field ${errors[item] && touched[item] && 'is-danger'}`}>
-                          <div class="label">{content.byId[item]}</div>
+                        <div
+                          className={`field ${errors[item] && touched[item] && 'is-danger'}`}
+                          key={key}
+                        >
+                          <div className="label">{content.byId[item]}</div>
                           <Field name={item}>
                             {({
                               field, // { name, value, onChange, onBlur }
