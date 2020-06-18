@@ -58,6 +58,7 @@ services:
       - "traefik.port=3000"
       - "traefik.http.routers.frontend-secure.rule=Host(`covid.hdap.cloud`) && PathPrefix(`/frontend`)"
       - "traefik.http.routers.frontend-secure.entrypoints=websecure"
+      - "traefik.http.routers.frontend-secure.tls=true"
       - "traefik.http.routers.frontend-secure.tls.certresolver=mytlschallenge"
       - "traefik.http.middlewares.frontend-secure-stripprefix.stripprefix.prefixes=/frontend"
       - "traefik.http.routers.frontend-secure.middlewares=frontend-secure-stripprefix"
