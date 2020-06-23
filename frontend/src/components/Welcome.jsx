@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaRegBell } from "react-icons/fa";
 import { GiKnifeFork } from "react-icons/gi";
 import { GoSearch } from "react-icons/go";
-import testing_icon from '../assets/testing_icon.svg';
+import cross from '../assets/cross.svg';
 import symptom_checker from '../assets/symptom_checker.svg';
 import mask from '../assets/mask.svg';
 import mask_2 from '../assets/mask_2.svg';
@@ -11,6 +11,7 @@ import notification from '../assets/notification.svg';
 import dining from '../assets/dining.svg';
 import cleaning from '../assets/cleaning.svg';
 import crc from '../assets/crc.svg';
+import gt from '../assets/gt.png';
 
 export default class Welcome extends Component {
   render() {
@@ -18,9 +19,10 @@ export default class Welcome extends Component {
       <div className="welcome">
         <div className="nav">
           <div className="nav__wrap logo">
+            <img src={gt}/>
           </div>
           <div className="nav__wrap title">
-            <div>Home</div>
+            <div>Covid Central</div>
           </div>
           <div className="nav__wrap search">
             <div><GoSearch/></div>
@@ -57,7 +59,7 @@ export default class Welcome extends Component {
               <li class="hex-grid__item">
                   <div class="hex-grid__content">
                     <div className="icon">
-                      <img src={testing_icon}/>
+                      <img src={cross}/>
                     </div>
                     <div className="title">Getting tested</div>
                   </div>
@@ -65,7 +67,7 @@ export default class Welcome extends Component {
               <li class="hex-grid__item">
                   <a href="https://www.covidcheck.org/en/risk/?utm_source=gt&utm_medium=email&utm_campaign=prepilot">
                     <div class="hex-grid__content" style={{
-                      backgroundColor: '#b9f6ca',
+                      backgroundColor: '#f48fb1',
                       color: '#212121'
                     }}>
                       <div className="icon" style={{marginBottom: '6px'}}>

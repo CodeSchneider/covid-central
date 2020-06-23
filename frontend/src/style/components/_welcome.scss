@@ -9,25 +9,31 @@
   flex-direction: column;
   font-family: 'Nunito', sans-serif;
   .nav {
-    flex: 0 0 35px;
+    flex: 0 0 50px;
     display: flex;
+    margin-bottom: -15px;
     .nav__wrap {
       flex: 1;
       display: flex;
       &.logo {
         justify-content: flex-start;
         align-items: center;
+        img {
+          margin-left: 10px;
+          max-width: 40px;
+          height: auto;
+        }
       }
       &.title {
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
         color: white;
         font-size: 16px;
         line-height: 16px;
       }
       &.search {
         justify-content: flex-end;
-        align-items: flex-end;
+        align-items: center;
         color: white;
         font-size: 16px;
         line-height: 16px;
