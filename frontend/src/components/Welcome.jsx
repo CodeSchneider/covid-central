@@ -67,7 +67,7 @@ export default class Welcome extends Component {
               <li class="hex-grid__item">
                   <a href="https://www.covidcheck.org/en/risk/?utm_source=gt&utm_medium=email&utm_campaign=prepilot">
                     <div class="hex-grid__content" style={{
-                      backgroundColor: '#f48fb1',
+                      backgroundColor: '#aaf0d1',
                       color: '#212121'
                     }}>
                       <div className="icon" style={{marginBottom: '6px'}}>
