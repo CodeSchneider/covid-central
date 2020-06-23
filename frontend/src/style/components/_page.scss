@@ -1,3 +1,9 @@
+$block-size: 70;
+//Change this value
+$scrollbar-size: 13;
+
+$grid-cell-height: ($block-size * 2) * 80 /100 + px;
+
 .page {
   height: 100%;
   max-width: 700px;

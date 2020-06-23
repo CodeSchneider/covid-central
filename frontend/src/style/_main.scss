@@ -1,5 +1,6 @@
 html, body {
   height: 100%;
+  font-family: 'Nunito', sans-serif;
 }
 
 #root {
@@ -13,4 +14,158 @@ html, body {
   background-color: $background-color;
   flex: 1;
   display: flex;
+}
+
+$block: '.hex-grid';
+
+@mixin grid-item($amount) {
+    @for $i from 1 through $amount {
+        &:nth-of-type(#{$amount}n + #{$i}) {
+            grid-column: #{$i + $i - 1} / span 3;
+            @if $i % 2 == 0 {
+                grid-row: calc(var(--counter) + var(--counter) - 1) / span 2;
+            }
+        }
+    }
+
+    @for $i from 1 through 20 {
+        &:nth-of-type(n + #{$i * $amount + 1}) {
+            --counter: #{$i + 1};
+        }
+    }
+}
+
+#{$block} {
+	   justify-content: center;
+    &__list {
+      flex: 1;
+      max-width: 400px;
+      margin: auto;
+      // margin: 0px 50px;
+      --amount: 5;
+      position: relative;
+      padding: 0;
+  		list-style-type: none;
+  		display: grid;
+      grid-template-columns: repeat(var(--amount), 1fr 2fr) 1fr;
+  		grid-gap: 2.5rem 5rem;
+    }
+
+    &__item {
+      position: relative;
+  		grid-column: 1 / span 3;
+  		grid-row: calc(var(--counter) + var(--counter)) / span 2;
+      filter: drop-shadow(-1px 6px 3px rgba(0, 0, 0, 0.5));
+  		height: 0;
+  		padding-bottom: 90%;
+    }
+
+    &__content {
+      position: absolute;
+  		height: 100%;
+  		width: 100%;
+  		font-size: 1.125rem;
+  		// color: #111111;
+      color: white;
+  		background-color: #1879DB;
+  		clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+  		display: flex;
+  		flex-direction: column;
+  		justify-content: center;
+  		align-items: center;
+  		padding: 2rem 12%;
+  		text-decoration: none;
+  		text-align: center;
+  		transition: transform .24s ease-out;
+      .icon {
+        // font-size: 28px;
+        margin-bottom: 10px;
+        img {
+          width: 28px;
+          height: auto;
+        }
+      }
+      .title {
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: 500;
+      }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+	#{$block} {
+		&__list {
+      --amount: 3;
+			--counter: 1;
+      grid-gap: 1rem 2rem;
+		}
+
+		&__item {
+			@include grid-item(3);
+		}
+	}
+}
+
+@media screen and (min-width: 1120px) and (max-width: 1439px) {
+	#{$block} {
+		&__list {
+      --amount: 3;
+			--counter: 1;
+      grid-gap: 1rem 2rem;
+		}
+
+		&__item {
+			@include grid-item(3);
+		}
+	}
+}
+
+@media screen and (min-width: 840px) and (max-width: 1119px) {
+	#{$block} {
+		&__list {
+      --amount: 3;
+			--counter: 1;
+			grid-gap: 1rem 2rem;
+		}
+
+		&__item {
+			@include grid-item(3);
+		}
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 839px) {
+	#{$block} {
+		&__list {
+			--amount: 3;
+			--counter: 1;
+			grid-gap: 1rem 2rem;
+		}
+
+		&__item {
+			@include grid-item(3);
+		}
+	}
+}
+
+@media screen and (max-width: 479px) {
+	#{$block} {
+		&__list {
+      --amount: 3;
+      --counter: 1;
+			grid-gap: 1rem 2rem;
+		}
+
+    &__item {
+      @include grid-item(3);
+    }
+
+    &__content {
+      .title {
+        font-size: 15px;
+        line-height: 15px;
+      }
+    }
+	}
 }
