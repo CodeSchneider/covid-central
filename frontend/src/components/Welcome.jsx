@@ -188,7 +188,7 @@ export default class Welcome extends Component {
             </ul>
           </div>*/}
           <SwipeableBottomSheet
-            overflowHeight={112}
+            overflowHeight={110}
             shadowTip={false}
             marginTop={64}
           >
