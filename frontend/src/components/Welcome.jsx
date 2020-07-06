@@ -191,7 +191,6 @@ export default class Welcome extends Component {
             overflowHeight={112}
             marginTop={128}
             shadowTip={false}
-            open={true}
           >
             <div className="bottom-sheet__summary">
               <div className="bottom-sheet__grip"></div>
