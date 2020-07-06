@@ -272,6 +272,7 @@ export default class Welcome extends Component {
                 </div>
               </div>
             </div>
+            {/*
             <div className="bottom-sheet-graph">
               <div className="bottom-sheet-graph__top-wrapper">
                 <div className="bottom-sheet-graph__title">Daily Confirmed Cases</div>
@@ -375,6 +376,7 @@ export default class Welcome extends Component {
                 />
               }
             </div>
+            */}
             <div className="bottom-sheet-table">
               {/*
               <Table
@@ -386,6 +388,11 @@ export default class Welcome extends Component {
                 dataSource={reports}
                 loading={drawerLoading}
               />*/}
+              {Array(30).fill().map((o, i) =>
+      					<div key={i} style={styles.colouredDiv(i*20)} />
+      				)}
+              {/*
+              <>
               { drawerLoaded &&
                 <table class="table">
                   <thead>
@@ -393,7 +400,6 @@ export default class Welcome extends Component {
                       <th>Date Reported</th>
                       <th className="second">Position</th>
                       <th>Date Last on Campus</th>
-                      {/*<th></th>*/}
                     </tr>
                   </thead>
                   <tbody>
@@ -403,13 +409,14 @@ export default class Welcome extends Component {
                           <td className="first">{r.dateReported}</td>
                           <td className="second">{r.position}</td>
                           <td className="third">{r.dateLastOnCampus}</td>
-                          {/*<td>view impact</td>*/}
                         </tr>
                       )
                     })}
                   </tbody>
                 </table>
               }
+              </>
+              */}
             </div>
           </SwipeableBottomSheet>
         </div>
