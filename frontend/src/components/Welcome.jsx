@@ -394,8 +394,8 @@ export default class Welcome extends Component {
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>Date Reported</th>
-                      <th className="second">Position</th>
+                      <th style={{"width": "36%"}}>Date Reported</th>
+                      <th style={{"width": "20%"}} className="second">Position</th>
                       <th>Date Last on Campus</th>
                     </tr>
                   </thead>
@@ -412,7 +412,7 @@ export default class Welcome extends Component {
                   </tbody>
                 </table>
               }
-              
+
             </div>
           </SwipeableBottomSheet>
         </div>
