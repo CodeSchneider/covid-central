@@ -1,0 +1,39 @@
+.bottom-sheet-table {
+  overflow-x: hidden;
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+    thead {
+      tr {
+        border-bottom: 2px solid #efeff2;
+        th {
+          white-space: nowrap;
+          padding: 8px 10px;
+          color: #9696a4;
+          font-weight: 400;
+          font-size: 13px;
+          &:first-child {
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        border-bottom: 1px solid #ededf1;
+        td {
+          color: #5a5a5f;
+          padding: 8px 10px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          &:first-child {
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}

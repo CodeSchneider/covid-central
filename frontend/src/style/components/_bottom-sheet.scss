@@ -1,0 +1,158 @@
+.react-swipeable-view-container {
+  .ReactSwipeableBottomSheet--open {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    .bottom-sheet__summary {
+      min-height: 90px;
+      display: flex;
+      flex-direction: column;
+      // margin: 0 20px;
+      .bottom-sheet__grip {
+        background-color: #e0e0e0;
+        width: 40px;
+        height: 5px;
+        border-radius: 5px;
+        margin: 10px auto;
+      }
+      .bottom-sheet__metrics {
+        display: flex;
+        border-bottom: 1px solid #E3E7EF;
+        .bottom-sheet__metrics__daily {
+          flex-grow: 0;
+          display: flex;
+          flex-direction: column;
+          padding-left: 2px;
+          padding-right: 10px;
+          border-right: 1px solid #E3E7EF;
+          border-image: linear-gradient(to top,#CFD7E6,rgba(227,231,239,0)) 1 100%;
+          margin-left: 20px;
+          .bottom-sheet__metrics__title {
+            font-size: 10px;
+            letter-spacing: .5px;
+            color: #62738D;
+            text-transform: uppercase;
+          }
+          .bottom-sheet__metrics__daily__wrapper {
+            display: flex;
+            align-items: flex-end;
+            flex: 1;
+            .bottom-sheet__metrics__daily__value {
+              font-size: 14px;
+              color: #56667D;
+              line-height: 18px;
+            }
+          }
+        }
+        .bottom-sheet__metrics__total {
+          flex: 1;
+          border-right: 1px solid #E3E7EF;
+          border-image: linear-gradient(to top,#CFD7E6,rgba(227,231,239,0)) 1 100%;
+          padding-left: 10px;
+          display: flex;
+          flex-direction: column;
+          margin-right: 20px;
+          .bottom-sheet__metrics__title {
+            font-size: 10px;
+            letter-spacing: .5px;
+            color: #62738D;
+            text-transform: uppercase;
+          }
+          .bottom-sheet__metrics__total__wrapper {
+            display: flex;
+            align-items: flex-end;
+            flex: 1;
+            .bottom-sheet__metrics__total__value {
+              font-size: 14px;
+              color: #56667D;
+              margin-right: 10px;
+              line-height: 18px
+            }
+            .bottom-sheet__metrics__total__chart {
+              flex-grow: 1;
+              position: relative;
+              overflow: hidden;
+              &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: -1px;
+                left: 0;
+                width: 50px;
+                background-color: transparent;
+                background-image: -webkit-linear-gradient(left,#fff,rgba(255,255,255,0));
+              }
+            }
+          }
+        }
+      }
+      .bottom-sheet__last-updated__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+        border-bottom: 1px solid #E3E7EF;
+        .bottom-sheet__last-updated {
+          margin-left: 20px;
+          .bottom-sheet__last-updated__label {
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: .5px;
+            color: #62738D;
+          }
+          .bottom-sheet__last-updated__value {
+            font-size: 13px;
+            margin-left: 5px;
+            color: rgb(71, 83, 102);
+          }
+        }
+        .bottom-sheet__sourced-from {
+          margin-right: 20px;
+          .bottom-sheet__sourced-from__label {
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: .5px;
+            color: #62738D;
+          }
+          .bottom-sheet__sourced-from__value {
+            font-size: 13px;
+            margin-left: 5px;
+            color: #7c5ba1;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .bottom-sheet-graph {
+      padding: 15px 20px;
+      background-color: #f7f8fb;
+      border-bottom: 1px solid #E3E7EF;
+      .bottom-sheet-graph__top-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+        .bottom-sheet-graph__title {
+          color: #414146;
+        }
+        .bottom-sheet-graph__range {
+          .ant-select {
+            color: #79589F;
+            font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
+            .ant-select-selector {
+              border: 1px solid #79589F;
+              border-radius: 4px;
+              background-color: transparent;
+              align-items: center;
+              .ant-select-selection-item {
+
+              }
+            }
+            .ant-select-arrow {
+              color: #79589F;
+            }
+          }
+        }
+      }
+    }
+  }
+}

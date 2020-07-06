@@ -1,6 +1,21 @@
+@font-face {
+  font-family: 'BentonSans';
+  src: local('BentonSans'), url(../fonts/BentonSans-Regular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'BentonSans-Bold';
+  src: local('BentonSans-Bold'), url(../fonts/BentonSans-Bold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'BentonSans-Medium';
+  src: local('BentonSans-Medium'), url(../fonts/BentonSans-Medium.otf) format('opentype');
+}
+
 html, body {
   height: 100%;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'BentonSans', 'Helvetica Neue', helvetica, arial, sans-serif;
 }
 
 #root {
