@@ -104,7 +104,7 @@ export default class Welcome extends Component {
     return (
       <>
         <div className="welcome">
-          <div className="nav">
+          {/*<div className="nav">
             <div className="nav__wrap logo">
               <img src={gt}/>
             </div>
@@ -114,10 +114,10 @@ export default class Welcome extends Component {
             <div className="nav__wrap search">
               <div><GoSearch/></div>
             </div>
-          </div>
+          </div>*/}
           {/*<div>Welcome page under construction.</div>
           <Link to="/surveys/prelim">Start symptom check</Link>*/}
-          <div className="hex-grid">
+          {/*<div className="hex-grid">
             <ul class="hex-grid__list">
                 <li class="hex-grid__item">
                     <div class="hex-grid__content">
@@ -186,10 +186,9 @@ export default class Welcome extends Component {
                     </div>
                 </li>
             </ul>
-          </div>
+          </div>*/}
           <SwipeableBottomSheet
             overflowHeight={112}
-            marginTop={128}
             shadowTip={false}
           >
             <div className="bottom-sheet__summary">

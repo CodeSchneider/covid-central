@@ -1,12 +1,13 @@
 .welcome {
-  height: 100%;
-  max-width: 700px;
-  margin: auto;
+  // height: 100%;
+  // max-width: 700px;
+  // margin: auto;
   // background-color: $fill-1;
-  background-color: #002d42;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+  background-color: #fafafa;
+  // flex: 1;
+  // display: flex;
+  // flex-direction: column;
   font-family: 'BentonSans', 'Helvetica Neue', helvetica, arial, sans-serif;
   .nav {
     flex: 0 0 50px;

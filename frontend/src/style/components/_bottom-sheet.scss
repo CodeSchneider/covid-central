@@ -1,4 +1,6 @@
 .react-swipeable-view-container {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   .ReactSwipeableBottomSheet--open, .ReactSwipeableBottomSheet--closed {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
