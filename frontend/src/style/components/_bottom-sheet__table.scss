@@ -3,8 +3,8 @@
   table {
     // border-collapse: collapse;
     // border-spacing: 0;
-    // table-layout: fixed;
-    // width: 100%;
+    table-layout: fixed;
+    width: 100%;
     thead {
       tr {
         border-bottom: 2px solid #efeff2;
@@ -14,6 +14,7 @@
           color: #9696a4;
           font-weight: 400;
           font-size: 13px;
+          text-align: left;
           &:first-child {
             padding-left: 20px;
           }
@@ -29,6 +30,7 @@
         td {
           color: #5a5a5f;
           padding: 8px 10px;
+          // text-align: left;
           // white-space: nowrap;
           // overflow: hidden;
           // text-overflow: ellipsis;
