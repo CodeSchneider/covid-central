@@ -24,7 +24,13 @@
           padding-left: 2px;
           padding-right: 10px;
           border-right: 1px solid #E3E7EF;
+          border-left: 0px solid #E3E7EF; //hack for safari
+          border-top: 0px solid #E3E7EF; //hack for safari
+          border-bottom: 0px solid #E3E7EF; //hack for safari
           border-image: linear-gradient(to top,#CFD7E6,rgba(227,231,239,0)) 1 100%;
+          -moz-border-image: linear-gradient(to top,#CFD7E6,rgba(227,231,239,0)) 1 100%;
+          -webkit-border-image: linear-gradient(to top,#CFD7E6,rgba(227,231,239,0)) 1 100%;
+          -o-border-image: linear-gradient(to top,#CFD7E6,rgba(227,231,239,0)) 1 100%;
           margin-left: 20px;
           .bottom-sheet__metrics__title {
             font-size: 10px;
@@ -46,6 +52,9 @@
         .bottom-sheet__metrics__total {
           flex: 1;
           border-right: 1px solid #E3E7EF;
+          border-left: 0px solid #E3E7EF; //hack for safari
+          border-top: 0px solid #E3E7EF; //hack for safari
+          border-bottom: 0px solid #E3E7EF; //hack for safari
           border-image: linear-gradient(to top,#CFD7E6,rgba(227,231,239,0)) 1 100%;
           padding-left: 10px;
           display: flex;
