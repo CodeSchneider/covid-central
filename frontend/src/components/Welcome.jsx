@@ -190,8 +190,9 @@ export default class Welcome extends Component {
           <SwipeableBottomSheet
             overflowHeight={112}
             shadowTip={false}
+            marginTop={64}
           >
-            {/*<div className="bottom-sheet__summary">
+            <div className="bottom-sheet__summary">
               <div className="bottom-sheet__grip"></div>
               <div className="bottom-sheet__metrics">
                 <div className="bottom-sheet__metrics__daily">
@@ -271,8 +272,8 @@ export default class Welcome extends Component {
                 </div>
               </div>
             </div>
-            */}
-            {/*
+
+
             <div className="bottom-sheet-graph">
               <div className="bottom-sheet-graph__top-wrapper">
                 <div className="bottom-sheet-graph__title">Daily Confirmed Cases</div>
@@ -376,7 +377,7 @@ export default class Welcome extends Component {
                 />
               }
             </div>
-            */}
+
             <div className="bottom-sheet-table">
               {/*
               <Table
@@ -388,11 +389,7 @@ export default class Welcome extends Component {
                 dataSource={reports}
                 loading={drawerLoading}
               />*/}
-              {Array(30).fill().map((o, i) =>
-      					<div key={i} style={styles.colouredDiv(i*20)} />
-      				)}
-              {/*
-              <>
+
               { drawerLoaded &&
                 <table class="table">
                   <thead>
@@ -415,8 +412,7 @@ export default class Welcome extends Component {
                   </tbody>
                 </table>
               }
-              </>
-              */}
+              
             </div>
           </SwipeableBottomSheet>
         </div>
