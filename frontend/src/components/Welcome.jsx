@@ -191,7 +191,7 @@ export default class Welcome extends Component {
             overflowHeight={112}
             shadowTip={false}
           >
-            <div className="bottom-sheet__summary">
+            {/*<div className="bottom-sheet__summary">
               <div className="bottom-sheet__grip"></div>
               <div className="bottom-sheet__metrics">
                 <div className="bottom-sheet__metrics__daily">
@@ -271,6 +271,7 @@ export default class Welcome extends Component {
                 </div>
               </div>
             </div>
+            */}
             {/*
             <div className="bottom-sheet-graph">
               <div className="bottom-sheet-graph__top-wrapper">
