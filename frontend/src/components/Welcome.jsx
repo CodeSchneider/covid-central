@@ -391,7 +391,7 @@ export default class Welcome extends Component {
                   <thead>
                     <tr>
                       <th>Date Reported</th>
-                      <th>Position</th>
+                      <th className="second">Position</th>
                       <th>Date Last on Campus</th>
                       {/*<th></th>*/}
                     </tr>
@@ -400,9 +400,9 @@ export default class Welcome extends Component {
                     {reports.map((r, index) => {
                       return (
                         <tr key={index}>
-                          <td>{r.dateReported}</td>
-                          <td>{r.position}</td>
-                          <td>{r.dateLastOnCampus}</td>
+                          <td className="first">{r.dateReported}</td>
+                          <td className="second">{r.position}</td>
+                          <td className="third">{r.dateLastOnCampus}</td>
                           {/*<td>view impact</td>*/}
                         </tr>
                       )
