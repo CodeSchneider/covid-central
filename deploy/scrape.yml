@@ -1,0 +1,15 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: covid-central-scrape
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: covid-central-scrape
+            image: codeschneider/covid-central-scrape
+            imagePullPolicy: Always
+          restartPolicy: OnFailure

@@ -11,6 +11,7 @@ const schema = Joi.object().keys({
 
 async function run() {
   try {
+    console.log('scraping @ ',new Date());
     const inputs = await Joi.validate(argv, schema, { stripUnknown: true });
     const raw = await scrape(inputs);
     await save('scrape.raw', raw);

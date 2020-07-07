@@ -54,8 +54,10 @@ module.exports = {
     return new Promise(async function(resolve, reject) {
       try {
         // const mongoUrl = 'mongodb://covid-central:covid-central@localhost:27017';
-        const mongoUrl = 'mongodb://covid-central:covid-central@covid.hdap.cloud:27017';
-        const dbName = 'covid-central';
+        // const mongoUrl = 'mongodb://covid-central:covid-central@covid.hdap.cloud:27017';
+        // const dbName = 'covid-central';
+        const mongoUrl = 'mongodb://test:test@my-release-mongodb:27017/test';
+        const dbName = 'test';
         const client = await MongoClient.connect(mongoUrl, { useUnifiedTopology: true });
         const db = await client.db(dbName);
         await db.collection(collection).insertOne({

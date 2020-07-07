@@ -3,8 +3,8 @@ const MongoClient = require('mongodb').MongoClient;
 module.exports = {
   last: async function(req,res) {
     try {
-      const mongoUrl = 'mongodb://covid-central:covid-central@mongo:27017';
-      const dbName = 'covid-central';
+      const mongoUrl = 'mongodb://test:test@my-release-mongodb:27017/test';
+      const dbName = 'test';
       const client = await MongoClient.connect(mongoUrl, {});
       const db = await client.db(dbName);
       const record = await db.collection('scrape.processed').find(

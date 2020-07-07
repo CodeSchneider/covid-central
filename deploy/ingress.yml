@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: covid-central-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  tls:
+  - hosts:
+    - covid.hdap.cloud
+    secretName: covid-central-tls
+  rules:
+  - host: covid.hdap.cloud
+    http:
+      paths:
+      - path: /api/(.*)
+        backend:
+          serviceName: covid-central-api
+          servicePort: 80
+      - path: /app/(.*)
+        backend:
+          serviceName: covid-central-frontend
+          servicePort: 80
