@@ -1,7 +1,7 @@
 ---
 kind: pipeline
 type: docker
-name: covid-central
+name: covid-central-2
 
 steps:
 - name: publish-backend
