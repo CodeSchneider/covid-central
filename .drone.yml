@@ -12,4 +12,4 @@ steps:
     password:
       from_secret: docker_password
     repo: codeschneider/covid-central
-    dockerfile: backend
+    dockerfile: backend/Dockerfile
