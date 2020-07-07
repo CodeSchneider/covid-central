@@ -1,7 +1,7 @@
 ---
 kind: pipeline
-type: docker
-name: covid-central-2
+type: kubernetes
+name: default
 
 steps:
 - name: publish-backend
