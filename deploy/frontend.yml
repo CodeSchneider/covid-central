@@ -13,14 +13,10 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  # The name of our deployment
   name: covid-central-frontend
-  # Kubernetes matches things up by labels,
-  # So we give it a few ones to identify this deployment by
   labels:
     app: covid-central-frontend
 spec:
-  # We want 3 instances of the app running
   replicas: 1
   selector:
     matchLabels:
@@ -31,17 +27,11 @@ spec:
         app: covid-central-frontend
     spec:
       containers:
-      # Here is our actual definition for deployment
       - name: covid-central-frontend
-        # Here we add the image we built earlier
         image: codeschneider/covid-central-frontend:{{DRONE_COMMIT_SHA}}
         imagePullPolicy: Always
-        # We are still overriding for development,
-        # Until we have added tls
         ports:
-          # The port INSIDE the container
         - containerPort: 80
-          # A name for the port
           name: app
         env:
         - name: COVID_CENTRAL_API_URL
