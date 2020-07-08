@@ -23,6 +23,7 @@ steps:
     repo: codeschneider/covid-central-frontend
     context: frontend
     dockerfile: frontend/Dockerfile.prod
+    
 - name: deliver
   image: sinlead/drone-kubectl
    settings:
