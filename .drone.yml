@@ -21,5 +21,4 @@ steps:
     password:
       from_secret: docker_password
     repo: codeschneider/covid-central-frontend
-    context: frontend
     dockerfile: frontend/Dockerfile.prod
