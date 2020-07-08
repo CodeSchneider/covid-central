@@ -3,13 +3,13 @@ kind: CronJob
 metadata:
   name: covid-central-scrape
 spec:
-  schedule: "* * * * *"
+  schedule: "*/1 * * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
           - name: covid-central-scrape
-            image: codeschneider/covid-central-scrape
+            image: codeschneider/covid-central-scrape:{{DRONE_COMMIT_SHA}}
             imagePullPolicy: Always
           restartPolicy: OnFailure
