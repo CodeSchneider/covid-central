@@ -25,7 +25,9 @@ steps:
     kubernetes_token:
       from_secret: k8s_token
   commands:
-    - kubectl apply -f ./deploy/frontend.yml
+    # - kubectl apply -f ./deploy/frontend.yml
+    - cat ./deploy/frontend.yml | sed "s/{{DRONE_COMMIT_SHA}}/${DRONE_COMMIT_SHA:0:7}/g" | kubectl apply -f -
+
 
 ---
 kind: pipeline

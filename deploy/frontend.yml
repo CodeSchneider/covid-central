@@ -34,7 +34,7 @@ spec:
       # Here is our actual definition for deployment
       - name: covid-central-frontend
         # Here we add the image we built earlier
-        image: codeschneider/covid-central-frontend:latest
+        image: codeschneider/covid-central-frontend:{{DRONE_COMMIT_SHA}}
         imagePullPolicy: Always
         # We are still overriding for development,
         # Until we have added tls
