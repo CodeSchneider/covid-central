@@ -12,6 +12,7 @@ steps:
     password:
       from_secret: docker_password
     repo: codeschneider/covid-central-frontend
+    tags: [ "${DRONE_COMMIT_SHA:0:7}","latest" ]
     context: frontend
     dockerfile: frontend/Dockerfile.prod
 - name: deliver
@@ -40,6 +41,7 @@ steps:
     password:
       from_secret: docker_password
     repo: codeschneider/covid-central
+    tags: [ "${DRONE_COMMIT_SHA:0:7}","latest" ]
     context: backend
     dockerfile: backend/Dockerfile
 - name: deliver
@@ -68,6 +70,7 @@ steps:
     password:
       from_secret: docker_password
     repo: codeschneider/covid-central-scrape
+    tags: [ "${DRONE_COMMIT_SHA:0:7}","latest" ]
     context: scraper
     dockerfile: scraper/Dockerfile
 - name: deliver
