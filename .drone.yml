@@ -4,12 +4,21 @@ type: kubernetes
 name: default
 
 steps:
-- name: publish-backend
+# - name: publish-backend
+#   image: plugins/docker
+#   settings:
+#     username:
+#       from_secret: docker_username
+#     password:
+#       from_secret: docker_password
+#     repo: codeschneider/covid-central
+#     dockerfile: backend/Dockerfile
+- name: publish-frontend
   image: plugins/docker
   settings:
     username:
       from_secret: docker_username
     password:
       from_secret: docker_password
-    repo: codeschneider/covid-central
-    dockerfile: backend/Dockerfile
+    repo: codeschneider/covid-central-frontend
+    dockerfile: frontend/Dockerfile.prod
