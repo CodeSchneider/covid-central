@@ -13,7 +13,7 @@ steps:
 #       from_secret: docker_password
 #     repo: codeschneider/covid-central
 #     dockerfile: backend/Dockerfile
-- name: publish-frontend-3
+- name: publish-frontend-4
   image: plugins/docker
   settings:
     username:
