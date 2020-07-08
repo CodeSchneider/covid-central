@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-type: kubernetes
+type: docker
 name: default
 
 steps:
@@ -13,7 +13,7 @@ steps:
 #       from_secret: docker_password
 #     repo: codeschneider/covid-central
 #     dockerfile: backend/Dockerfile
-- name: publish-frontend-5
+- name: publish
   image: plugins/docker
   settings:
     username:
