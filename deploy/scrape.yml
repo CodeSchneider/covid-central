@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: covid-central-scrape
 spec:
-  schedule: "* * * * *"
+  schedule: "0 * * * *"
   jobTemplate:
     spec:
       template:
