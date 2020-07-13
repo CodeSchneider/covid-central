@@ -27,6 +27,8 @@ import hex2 from '../assets/hex2.svg';
 import hex3 from '../assets/hex3.png';
 import mask_purple from '../assets/mask_purple.svg';
 import mask2 from '../assets/mask2.svg';
+import get_help from '../assets/get_help.svg';
+import get_tested from '../assets/get_tested.svg';
 const { Option } = Select;
 
 export default class Welcome extends Component {
@@ -41,18 +43,6 @@ export default class Welcome extends Component {
     drawerLoading: true,
     drawerLoaded: false,
     drawerLoadError: false
-  };
-
-  showDrawer = () => {
-    this.setState({
-      visible: true,
-    });
-  };
-
-  onClose = () => {
-    this.setState({
-      visible: false,
-    });
   };
 
   componentDidMount = async () => {
@@ -91,6 +81,7 @@ export default class Welcome extends Component {
       selectedTimeseries,
       reports
     } = this.state;
+    console.log('VIZ STATE: ',visible);
     const styles={
 			title:{
 				backgroundColor: '#00bcd4',
@@ -134,7 +125,7 @@ export default class Welcome extends Component {
               <div className="empty">
               </div>
             </nav>
-            <div className="covid-check_wrapper">
+            <a href="https://www.covidcheck.org/en/risk/?utm_source=gt&utm_medium=email&utm_campaign=prepilot" className="covid-check_wrapper">
               <div className="covid-check">
                 <div class="covid-check__top">
                   <div class="covid-check__title-area">
@@ -150,9 +141,9 @@ export default class Welcome extends Component {
                       </div>
                     </div>
                   </div>
-                  <a href="https://www.covidcheck.org/en/risk/?utm_source=gt&utm_medium=email&utm_campaign=prepilot" class="covid-check__start-button">
+                  <div class="covid-check__start-button">
                     Start
-                  </a>
+                  </div>
                 </div>
                 <div class="covid-check__bottom">
                   <div>Check your risk for COVID-19</div>
@@ -160,7 +151,7 @@ export default class Welcome extends Component {
                   {/*<span>Check if you might have COVID-19<span></br><span>and what to do next</span>*/}
                 </div>
               </div>
-            </div>
+            </a>
           </div>
           <div className="body">
             <div className="tiles-header">
@@ -210,140 +201,137 @@ export default class Welcome extends Component {
                   <BsChevronRight/>
                 </div>
               </a>
+              <a href="http://health.gatech.edu/coronavirus/services-guide" className="tile">
+                <div className="tile-left">
+                  <div className="tile-icon__wrapper">
+                    <div className="tile-icon">
+                      <img src={get_help}/>
+                    </div>
+                  </div>
+                  <div className="tile-text__wrapper">
+                    <div className="tile-text__top">
+                      Getting Help
+                    </div>
+                    <div className="tile-text__bottom">
+                    </div>
+                  </div>
+                </div>
+                <div className="tile-right">
+                  <BsChevronRight/>
+                </div>
+              </a>
+              <a href="http://health.gatech.edu/coronavirus/prevention-wellbeing#testing" className="tile">
+                <div className="tile-left">
+                  <div className="tile-icon__wrapper">
+                    <div className="tile-icon">
+                      <img src={get_tested} style={{"width": "25px"}}/>
+                    </div>
+                  </div>
+                  <div className="tile-text__wrapper">
+                    <div className="tile-text__top">
+                      Getting Tested
+                    </div>
+                    <div className="tile-text__bottom">
+                    </div>
+                  </div>
+                </div>
+                <div className="tile-right">
+                  <BsChevronRight/>
+                </div>
+              </a>
+              <a href="http://health.gatech.edu/coronavirus/campus-guidelines#sick" className="tile">
+                <div className="tile-left">
+                  <div className="tile-icon__wrapper">
+                    <div className="tile-icon">
+                      <img src={cross}/>
+                    </div>
+                  </div>
+                  <div className="tile-text__wrapper">
+                    <div className="tile-text__top">
+                      If You Get Sick
+                    </div>
+                    <div className="tile-text__bottom">
+                    </div>
+                  </div>
+                </div>
+                <div className="tile-right">
+                  <BsChevronRight/>
+                </div>
+              </a>
+            </div>
+            <div className="tiles-header" style={{"marginTop": "20px"}}>
+              <div className="tiles-header__text">
+                Campus Services
+              </div>
+            </div>
+            <div className="tiles" style={{"marginBottom": "60px"}}>
+              <div className="tile">
+                <div className="tile-left">
+                  <div className="tile-icon__wrapper">
+                    <div className="tile-icon">
+                      <img src={crc}/>
+                    </div>
+                  </div>
+                  <div className="tile-text__wrapper">
+                    <div className="tile-text__top">
+                      CRC
+                    </div>
+                    <div className="tile-text__bottom">
+                    </div>
+                  </div>
+                </div>
+                <div className="tile-right">
+                  <BsChevronRight/>
+                </div>
+              </div>
+              <div className="tile">
+                <div className="tile-left">
+                  <div className="tile-icon__wrapper">
+                    <div className="tile-icon">
+                      <img src={dining}/>
+                    </div>
+                  </div>
+                  <div className="tile-text__wrapper">
+                    <div className="tile-text__top">
+                      Dining and Delivery
+                    </div>
+                    <div className="tile-text__bottom">
+                    </div>
+                  </div>
+                </div>
+                <div className="tile-right">
+                  <BsChevronRight/>
+                </div>
+              </div>
+              <a href="http://housing.gatech.edu/covid-19-changes-faqs" className="tile">
+                <div className="tile-left">
+                  <div className="tile-icon__wrapper">
+                    <div className="tile-icon">
+                      <img src={cleaning}/>
+                    </div>
+                  </div>
+                  <div className="tile-text__wrapper">
+                    <div className="tile-text__top">
+                      Housing FAQS
+                    </div>
+                    <div className="tile-text__bottom">
+                    </div>
+                  </div>
+                </div>
+                <div className="tile-right">
+                  <BsChevronRight/>
+                </div>
+              </a>
             </div>
           </div>
-          {/*<div className="nav">
-            <div className="nav__wrap logo">
-              <img src={gt}/>
-            </div>
-            <div className="nav__wrap title">
-              <div>Covid Central</div>
-            </div>
-            <div className="nav__wrap search">
-              <div><GoSearch/></div>
-            </div>
-          </div>*/}
-            {/*<div className="tiles">
-              <div className="tile-big">
-                covid check
-              </div>
-              <div class="flex-container">
-                <div class="flex-cell">
-                    <div class="flex-item">1</div>
-                </div>
-                <div class="flex-cell">
-                    <div class="flex-item">2</div>
-                </div>
-                <div class="flex-cell">
-                    <div class="flex-item">3</div>
-                </div>
-                <div class="flex-cell">
-                    <div class="flex-item">4</div>
-                </div>
-                <div class="flex-cell">
-                    <div class="flex-item">5</div>
-                </div>
-                <div class="flex-cell">
-                    <div class="flex-item">6</div>
-                </div>
-                <div class="flex-cell">
-                    <div class="flex-item">7</div>
-                </div>
-                <div class="flex-cell">
-                    <div class="flex-item">8</div>
-                </div>
-                <div class="flex-cell">
-                    <div class="flex-item">9</div>
-                </div>
-                <div class="flex-cell">
-                    <div class="flex-item">10</div>
-                </div>
-                <div class="flex-cell">
-                    <div class="flex-item">11</div>
-                </div>
-                <div class="flex-cell">
-                    <div class="flex-item">12</div>
-                </div>
-            </div>
-            </div>*/}
-          {/*<div>Welcome page under construction.</div>
-          <Link to="/surveys/prelim">Start symptom check</Link>*/}
-          {/*<div className="hex-grid">
-            <ul class="hex-grid__list">
-                <li class="hex-grid__item">
-                    <div class="hex-grid__content">
-                        <div className="icon">
-                          <img src={mask}/>
-                        </div>
-                        <div className="title">Protective equipment</div>
-                    </div>
-                </li>
-                <li class="hex-grid__item">
-                    <div class="hex-grid__content">
-                      <div className="icon">
-                        <img src={notification}/>
-                      </div>
-                      <div className="title">Campus updates</div>
-                    </div>
-                </li>
-                <li class="hex-grid__item">
-                    <div class="hex-grid__content">
-                      <div className="icon">
-                        <img src={dining}/>
-                      </div>
-                      <div className="title">Dining and delivery</div>
-                    </div>
-                </li>
-                <li class="hex-grid__item">
-                    <div class="hex-grid__content">
-                      <div className="icon">
-                        <img src={cross}/>
-                      </div>
-                      <div className="title">Getting tested</div>
-                    </div>
-                </li>
-                <li class="hex-grid__item">
-                    <a href="https://www.covidcheck.org/en/risk/?utm_source=gt&utm_medium=email&utm_campaign=prepilot">
-                      <div class="hex-grid__content" style={{
-                        backgroundColor: '#aaf0d1',
-                        color: '#212121'
-                      }}>
-                        <div className="icon" style={{marginBottom: '6px'}}>
-                          <img src={symptom_checker}/>
-                        </div>
-                        <div className="title">Daily symptom check</div>
-                      </div>
-                    </a>
-                </li>
-                <li class="hex-grid__item">
-                    <div class="hex-grid__content">
-                      <div className="icon">
-                        <img src={crc}/>
-                      </div>
-                      <div className="title">CRC signup</div>
-                    </div>
-                </li>
-                <li class="hex-grid__item" style={{display: 'none'}}>
-                    <div class="hex-grid__content">
-                        Blank
-                    </div>
-                </li>
-                <li class="hex-grid__item">
-                    <div class="hex-grid__content">
-                      <div className="icon">
-                        <img src={cleaning}/>
-                      </div>
-                      <div className="title">Buildings and cleaning</div>
-                    </div>
-                </li>
-            </ul>
-          </div>*/}
           <SwipeableBottomSheet
             overflowHeight={110}
             shadowTip={false}
             marginTop={64}
           >
-            <div className="bottom-sheet__summary">
+            <div
+              className="bottom-sheet__summary"
+            >
               <div className="bottom-sheet__grip"></div>
               <div className="bottom-sheet__metrics">
                 <div className="bottom-sheet__metrics__daily">
@@ -530,17 +518,6 @@ export default class Welcome extends Component {
             </div>
 
             <div className="bottom-sheet-table">
-              {/*
-              <Table
-                columns={columns}
-                expandable={{
-                  expandedRowRender: r => <p style={{ margin: 0 }}>{r.campusImpact}</p>,
-                  rowExpandable: r => r.campusImpact
-                }}
-                dataSource={reports}
-                loading={drawerLoading}
-              />*/}
-
               { drawerLoaded &&
                 <table class="table">
                   <thead>
@@ -567,7 +544,6 @@ export default class Welcome extends Component {
             </div>
           </SwipeableBottomSheet>
         </div>
-
       </>
     );
   }

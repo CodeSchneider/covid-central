@@ -2,7 +2,7 @@ const cheerio = require("cheerio");
 const axios = require("axios");
 const moment = require("moment");
 const MongoClient = require('mongodb').MongoClient;
-const { table_1, table_2 } = require('./scrapers.js');
+const { table_1, table_2, table_N } = require('./scrapers.js');
 const { days } = require('./timeseries.js');
 
 module.exports = {
@@ -15,7 +15,10 @@ module.exports = {
         const $ = await cheerio.load(result.data);
         return resolve({
           ...table_1($),
-          ...table_2($)
+          reports: [
+            ...table_2($).reports,
+            ...table_N($).reports
+          ]
         });
       } catch(e) {
         console.log('e: ',e);
@@ -58,6 +61,8 @@ module.exports = {
         // const dbName = 'covid-central';
         const mongoUrl = 'mongodb://test:test@my-release-mongodb:27017/test';
         const dbName = 'test';
+        // const mongoUrl = 'mongodb://localhost:27017/covid-central';
+        // const dbName = 'covid-central';
         const client = await MongoClient.connect(mongoUrl, { useUnifiedTopology: true });
         const db = await client.db(dbName);
         await db.collection(collection).insertOne({

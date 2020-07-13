@@ -49,5 +49,36 @@ module.exports = {
       });
     });
     return { reports };
+  },
+  table_N: function($) {
+    let reports = [];
+    const tables = $('#node-707 table');
+    $(tables).each((index, element) => {
+      $(element).find('tbody > tr').each((index, element) => {
+        let dateReported,
+            position,
+            dateLastOnCampus,
+            campusImpact;
+        $(element).find('td').each((index, element) => {
+          switch(index) {
+            case 0:
+              dateReported = $(element).text();
+            case 1:
+              position = $(element).text();
+            case 2:
+              dateLastOnCampus = $(element).text();
+            case 3:
+              campusImpact = $(element).text();
+          }
+        });
+        reports.push({
+          dateReported,
+          position,
+          dateLastOnCampus,
+          campusImpact
+        });
+      });
+    });
+    return { reports };
   }
 }
