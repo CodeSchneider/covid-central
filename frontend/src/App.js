@@ -11,6 +11,7 @@ import Survey from './components/Survey';
 import T1 from './components/T1';
 import T2 from './components/T2';
 import T3 from './components/T3';
+import Resources from './components/Resources';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <div className="workspace">
         <Switch>
           <Route exact path="/welcome" component={Welcome}/>
+          <Route exact path="/resources" component={Resources}/>
           <Route exact path="/surveys/:slug" component={Survey}/>
           <Route exact path="/surveys/prelim/terminals/pass" component={T1}/>
           <Route exact path="/surveys/follow-up/terminals/pass" component={T2}/>

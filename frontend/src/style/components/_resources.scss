@@ -1,0 +1,94 @@
+.resources {
+  background-color: #fafafa;
+  .resources-nav {
+    background-color: white;
+    padding: 0px 20px;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    box-shadow: 0 5px 5px rgba(182, 182, 182, 0.10);
+    .first {
+      flex: 1;
+      font-size: 23px;
+      a {
+        display: flex;
+        text-decoration: none;
+        color: #686d6a;
+      }
+    }
+    .middle {
+      // flex: auto;
+      // display: flex;
+      // justify-content: center;
+      line-height: 16px;
+      color: #686d6a;
+      font-size: 16px;
+      font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
+    }
+    .last {
+      flex: 1;
+    }
+  }
+  .resources-list {
+    padding: 20px;
+    .resources-header {
+      color: #6d706f;
+      font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
+      font-size: 14px;
+      margin-bottom: 10px
+    }
+    .resources-tiles {
+      .resources-tile {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 10px;
+        border-radius: 6px;
+        box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+        margin-bottom: 10px;
+        .tile-left {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          .tile-icon__wrapper {
+            background: green;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            background-color: #F7F8FB;
+            .tile-icon {
+              font-size: 30px;
+              color: #79589F;
+              line-height: 22px;
+              img {
+                width: 30px;
+                height: auto;
+              }
+            }
+          }
+          .tile-text__wrapper {
+            margin-left: 10px;
+            .tile-text__top {
+              // color: #8b8e8c;
+              color: #424242;
+              letter-spacing: .5px;
+              font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
+            }
+            .tile-text__bottom {
+
+            }
+          }
+        }
+        .tile-right {
+          display: flex;
+          align-items: center;
+          font-size: 22px;
+          color: #79589F;
+        }
+      }
+    }
+  }
+}
