@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: covid-central-api
-        image: codeschneider/covid-central:{{DRONE_COMMIT_SHA}}
+        image: codeschneider/covid-central:latest
         imagePullPolicy: Always
         command: ["pm2-runtime", "app.js"]
         ports:
@@ -52,4 +52,4 @@ spec:
         - name: REDIS_CONTAINER_PORT
           value: "6379"
         - name: FRONTEND_URL
-          value: https://covid.hdap.cloud
+          value: https://covid-central.gatech.edu

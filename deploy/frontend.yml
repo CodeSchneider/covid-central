@@ -35,4 +35,4 @@ spec:
           name: app
         env:
         - name: COVID_CENTRAL_API_URL
-          value: covid.hdap.cloud/api
+          value: covid-central.gatech.edu/api

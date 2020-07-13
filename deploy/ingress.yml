@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - covid.hdap.cloud
+    - covid-central.gatech.edu
     secretName: covid-central-tls
   rules:
-  - host: covid.hdap.cloud
+  - host: covid-central.gatech.edu
     http:
       paths:
       - path: /api/(.*)
