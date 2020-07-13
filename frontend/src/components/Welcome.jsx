@@ -155,7 +155,7 @@ export default class Welcome extends Component {
                   </a>
                 </div>
                 <div class="covid-check__bottom">
-                  <div>Check if you might have COVID-19</div>
+                  <div>Check your risk for COVID-19</div>
                   <div>and what to do next.</div>
                   {/*<span>Check if you might have COVID-19<span></br><span>and what to do next</span>*/}
                 </div>
