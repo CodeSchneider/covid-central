@@ -34,11 +34,13 @@
         flex: auto;
         display: flex;
         justify-content: center;
-        img {
-          max-width: 25px;
-          height: auto;
+        .first_wrapper {
+          img {
+            width: 25px;
+            height: auto;
+          }
         }
-        div {
+        .second_wrapper {
           color: white;
           margin-left: 4px;
           font-size: 16px;

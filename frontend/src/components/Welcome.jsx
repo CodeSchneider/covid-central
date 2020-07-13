@@ -123,8 +123,10 @@ export default class Welcome extends Component {
                 <img src={gt_white_logo}/>
               </div>
               <div className="navbar__title">
-                <img src={covid_central_logo}/>
-                <div>
+                <div className="first_wrapper">
+                  <img src={covid_central_logo}/>
+                </div>
+                <div className="second_wrapper">
                   <span className="first">COVID</span>
                   <span className="second">&nbsp;Central</span>
                 </div>
