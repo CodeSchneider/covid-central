@@ -235,7 +235,7 @@ export default class Welcome extends Component {
               Campus Services
             </div>
             <div className="resources-tiles">
-              <div className="resources-tile">
+              <a href="https://crc.gatech.edu/about/hours" className="resources-tile">
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">
                     <div className="tile-icon">
@@ -253,8 +253,8 @@ export default class Welcome extends Component {
                 <div className="tile-right">
                   <BsChevronRight/>
                 </div>
-              </div>
-              <div className="resources-tile">
+              </a>
+              <a href="https://gatech.co1.qualtrics.com/jfe/form/SV_71mP5d4RzoAIjit" className="resources-tile">
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">
                     <div className="tile-icon">
@@ -272,7 +272,7 @@ export default class Welcome extends Component {
                 <div className="tile-right">
                   <BsChevronRight/>
                 </div>
-              </div>
+              </a>
               <a href="http://housing.gatech.edu/covid-19-changes-faqs" className="resources-tile">
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">

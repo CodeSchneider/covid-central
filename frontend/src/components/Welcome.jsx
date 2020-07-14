@@ -265,7 +265,7 @@ export default class Welcome extends Component {
               </div>
             </div>
             <div className="tiles" style={{"marginBottom": "60px"}}>
-              <div className="tile">
+              <a href="https://crc.gatech.edu/about/hours" className="tile">
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">
                     <div className="tile-icon">
@@ -283,8 +283,8 @@ export default class Welcome extends Component {
                 <div className="tile-right">
                   <BsChevronRight/>
                 </div>
-              </div>
-              <div className="tile">
+              </a>
+              <a href="https://gatech.co1.qualtrics.com/jfe/form/SV_71mP5d4RzoAIjit" className="tile">
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">
                     <div className="tile-icon">
@@ -302,7 +302,7 @@ export default class Welcome extends Component {
                 <div className="tile-right">
                   <BsChevronRight/>
                 </div>
-              </div>
+              </a>
               <a href="http://housing.gatech.edu/covid-19-changes-faqs" className="tile">
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">
