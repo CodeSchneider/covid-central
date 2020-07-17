@@ -20,11 +20,13 @@
         }
       }
       &.ant-select-item-option-selected {
-        background: rgba(121,88,159,.1);
+        // background: rgba(121,88,159,.1);
+        background: #fdebe6;
         border-color: rgba(207,215,230,.6);
         .ant-select-item-option-content {
           .range {
-            color: #79589F;
+            // color: #79589F;
+            color: #f37453;
             font-weight: 400;
             font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
           }

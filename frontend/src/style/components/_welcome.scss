@@ -3,8 +3,11 @@
   background-color: #fafafa;
   font-family: 'BentonSans', 'Helvetica Neue', helvetica, arial, sans-serif;
   .head {
-    background: linear-gradient(5deg,#745fb5,#9066b8);
+    // background: linear-gradient(5deg,$header-gradient-bottom,$header-gradient-top);
+    // background: linear-gradient(150deg,#53f 15%,#05d5ff 70%,#a6ffcb 94%);
+    background: linear-gradient(5deg, #003057, #335161);
     position: relative;
+    // background-color: lighten('#53f', 30%);
     height: 180px;
     .hexagon-background {
       position: absolute;
@@ -105,7 +108,7 @@
                 line-height: 15px;
               }
               .covid_check__title__second {
-                color: #79589F;
+                color: $primary-color;
                 font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
                 font-size: 11px;
                 line-height: 11px;
@@ -117,7 +120,7 @@
             position: absolute;
             right: -23px;
             top: 9px;
-            background-color: #79589F;
+            background-color: $primary-color;
             padding: 6px 14px;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
@@ -151,7 +154,7 @@
       }
       .tiles-header__link {
         a {
-          color: #79589F;
+          color: $primary-color;
           font-size: 12px;
           font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
         }
@@ -171,21 +174,27 @@
           justify-content: flex-start;
           align-items: center;
           .tile-icon__wrapper {
-            background: green;
             height: 50px;
             width: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 12px;
-            background-color: #F7F8FB;
+            background-color: $tile-background-color;
             .tile-icon {
               font-size: 30px;
-              color: #79589F;
+              color: $primary-color;
               line-height: 22px;
               img {
                 width: 30px;
                 height: auto;
+              }
+              svg {
+                width: 30px;
+                height: auto;
+                &#test {
+                  width: 25px;
+                }
               }
             }
           }
@@ -206,7 +215,7 @@
           display: flex;
           align-items: center;
           font-size: 22px;
-          color: #79589F;
+          color: $primary-color;
         }
       }
     }

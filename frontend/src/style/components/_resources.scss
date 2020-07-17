@@ -61,11 +61,18 @@
             background-color: #F7F8FB;
             .tile-icon {
               font-size: 30px;
-              color: #79589F;
+              color: $primary-color;
               line-height: 22px;
               img {
                 width: 30px;
                 height: auto;
+              }
+              svg {
+                width: 30px;
+                height: auto;
+                &#test {
+                  width: 25px;
+                }
               }
             }
           }

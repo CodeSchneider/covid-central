@@ -4,35 +4,25 @@ import SwipeableBottomSheet from 'react-swipeable-bottom-sheet';
 import { Chart } from "react-google-charts";
 import { Link } from 'react-router-dom';
 import API from '../api';
-import { FaRegBell } from "react-icons/fa";
-import { GiKnifeFork } from "react-icons/gi";
-import { GoSearch } from "react-icons/go";
 import { MdUpdate } from "react-icons/md";
 import { BsChevronRight } from "react-icons/bs";
 import covid_check_icon from '../assets/covid-check-icon.svg';
-import cross from '../assets/cross.svg';
-import symptom_checker from '../assets/symptom_checker.svg';
-import mask from '../assets/mask.svg';
-import mask_2 from '../assets/mask_2.svg';
-import notification from '../assets/notification.svg';
-import dining from '../assets/dining.svg';
-import cleaning from '../assets/cleaning.svg';
-import crc from '../assets/crc.svg';
-import gt from '../assets/gt.png';
 import gt_white_logo from '../assets/gt_white_logo.svg';
 import covid_central_logo from '../assets/covid_central_logo_white.svg';
-import hexagon from '../assets/hexagon_irregular.svg';
-import hexagon2 from '../assets/hexagon_irregular_2.svg';
-import hex2 from '../assets/hex2.svg';
-import hex3 from '../assets/hex3.png';
-import mask_purple from '../assets/mask_purple.svg';
-import mask2 from '../assets/mask2.svg';
-import get_help from '../assets/get_help.svg';
-import get_tested from '../assets/get_tested.svg';
+import hex from '../assets/hex3.png';
+import Mask from "../icons/mask";
+import Crc from "../icons/crc";
+import Sick from "../icons/sick";
+import Test from "../icons/test";
+import Help from "../icons/help";
+import Dining from "../icons/dining";
+import Housing from "../icons/housing";
 const { Option } = Select;
 
 export default class Welcome extends Component {
   state = {
+    // primaryColor: '#53f',
+    primaryColor: '#335161',
     visible: false,
     placement: 'bottom',
     lastUpdated: null,
@@ -79,7 +69,8 @@ export default class Welcome extends Component {
       totalReported,
       timeseries,
       selectedTimeseries,
-      reports
+      reports,
+      primaryColor
     } = this.state;
     console.log('VIZ STATE: ',visible);
     const styles={
@@ -107,7 +98,7 @@ export default class Welcome extends Component {
         <div className="welcome">
           <div className="head">
             <div className="hexagon-background">
-              <img src={hex3}/>
+              <img src={hex}/>
             </div>
             <nav className="navbar">
               <div className="navbar__logo">
@@ -186,7 +177,7 @@ export default class Welcome extends Component {
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">
                     <div className="tile-icon">
-                      <img src={mask_purple}/>
+                      <Mask color={primaryColor}/>
                     </div>
                   </div>
                   <div className="tile-text__wrapper">
@@ -205,7 +196,7 @@ export default class Welcome extends Component {
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">
                     <div className="tile-icon">
-                      <img src={get_help}/>
+                      <Help color={primaryColor}/>
                     </div>
                   </div>
                   <div className="tile-text__wrapper">
@@ -224,7 +215,7 @@ export default class Welcome extends Component {
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">
                     <div className="tile-icon">
-                      <img src={get_tested} style={{"width": "25px"}}/>
+                      <Test color={primaryColor}/>
                     </div>
                   </div>
                   <div className="tile-text__wrapper">
@@ -243,7 +234,7 @@ export default class Welcome extends Component {
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">
                     <div className="tile-icon">
-                      <img src={cross}/>
+                      <Sick color={primaryColor}/>
                     </div>
                   </div>
                   <div className="tile-text__wrapper">
@@ -269,7 +260,7 @@ export default class Welcome extends Component {
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">
                     <div className="tile-icon">
-                      <img src={crc}/>
+                      <Crc color={primaryColor}/>
                     </div>
                   </div>
                   <div className="tile-text__wrapper">
@@ -288,7 +279,7 @@ export default class Welcome extends Component {
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">
                     <div className="tile-icon">
-                      <img src={dining}/>
+                      <Dining color={primaryColor}/>
                     </div>
                   </div>
                   <div className="tile-text__wrapper">
@@ -307,7 +298,7 @@ export default class Welcome extends Component {
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">
                     <div className="tile-icon">
-                      <img src={cleaning}/>
+                      <Housing color={primaryColor}/>
                     </div>
                   </div>
                   <div className="tile-text__wrapper">
@@ -383,7 +374,11 @@ export default class Welcome extends Component {
                               }
                             },
                             lineWidth: 1,
-                            colors: ['#a48fbd'],
+                            // colors: ['#a48fbd'],
+                            // colors: ['#53f'],
+                            // colors: ['#5534FF'],
+                            // colors: ['#42a5f5'],
+                            colors: [`#F37453`],
                             legend: 'none',
                             baselineColor: 'none',
                             isStacked: false,
@@ -504,13 +499,16 @@ export default class Welcome extends Component {
                       }
                    }  ,
                     lineWidth: 1,
-                    colors: ['#a48fbd'],
+                    // colors: ['#a48fbd'],
+                    colors: ['#F37453'],
                     legend: 'none',
                     // hAxis: {
                     //   ticks: ['6/18', '6/21', '6/24', '6/27'],
                     // },
                     isStacked: false,
-                    backgroundColor: '#f7f8fb'
+                    // backgroundColor: '#f7f8fb',
+                    backgroundColor: '#fff9f8'
+                    // backgroundColor: '#53f'
                   }}
                   rootProps={{ 'data-testid': '2' }}
                 />
