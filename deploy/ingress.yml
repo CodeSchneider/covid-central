@@ -20,7 +20,11 @@ spec:
         backend:
           serviceName: covid-central-api
           servicePort: 80
+      - path: /app/v2/(.*)
+        backend:
+          serviceName: covid-central-frontend-develop
+          servicePort: 80
       - path: /app/(.*)
         backend:
-          serviceName: covid-central-frontend
+          serviceName: covid-central-frontend-master
           servicePort: 80

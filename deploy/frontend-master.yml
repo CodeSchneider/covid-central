@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: covid-central-frontend-master
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: covid-central-frontend-master
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: covid-central-frontend-master
+  labels:
+    app: covid-central-frontend-master
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: covid-central-frontend-master
+  template:
+    metadata:
+      labels:
+        app: covid-central-frontend-master
+    spec:
+      containers:
+      - name: covid-central-frontend-master
+        image: codeschneider/covid-central-frontend:{{DRONE_COMMIT_SHA}}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+          name: app
+        env:
+        - name: COVID_CENTRAL_API_URL
+          value: covid-central.gatech.edu/api

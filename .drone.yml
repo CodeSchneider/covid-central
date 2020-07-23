@@ -1,7 +1,7 @@
 ---
 kind: pipeline
 type: docker
-name: frontend
+name: frontend-develop
 
 steps:
 - name: publish
@@ -15,6 +15,8 @@ steps:
     tags: [ "${DRONE_COMMIT_SHA:0:7}","latest" ]
     context: frontend
     dockerfile: frontend/Dockerfile.prod
+    build_args:
+      - PUBLIC_URL=/app/v2
 - name: deliver
   image: sinlead/drone-kubectl
   settings:
@@ -25,8 +27,46 @@ steps:
     kubernetes_token:
       from_secret: k8s_token
   commands:
-    - cat ./deploy/frontend.yml | sed "s/{{DRONE_COMMIT_SHA}}/${DRONE_COMMIT_SHA:0:7}/g" | kubectl apply -f -
+    - cat ./deploy/frontend-develop.yml | sed "s/{{DRONE_COMMIT_SHA}}/${DRONE_COMMIT_SHA:0:7}/g" | kubectl apply -f -
 
+trigger:
+  branch:
+  - develop
+
+---
+kind: pipeline
+type: docker
+name: frontend-master
+
+steps:
+- name: publish
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: codeschneider/covid-central-frontend
+    tags: [ "${DRONE_COMMIT_SHA:0:7}","latest" ]
+    context: frontend
+    dockerfile: frontend/Dockerfile.prod
+    build_args:
+      - PUBLIC_URL=/app
+- name: deliver
+  image: sinlead/drone-kubectl
+  settings:
+    kubernetes_server:
+      from_secret: k8s_server
+    kubernetes_cert:
+      from_secret: k8s_cert
+    kubernetes_token:
+      from_secret: k8s_token
+  commands:
+    - cat ./deploy/frontend-master.yml | sed "s/{{DRONE_COMMIT_SHA}}/${DRONE_COMMIT_SHA:0:7}/g" | kubectl apply -f -
+
+trigger:
+  branch:
+  - master
 
 ---
 kind: pipeline
