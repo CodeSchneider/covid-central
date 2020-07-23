@@ -1,0 +1,44 @@
+form.form-screener {
+  padding: 40px 25px;
+  .title {
+    font-size: 1.75rem;
+    font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
+    color: #424242;
+    line-height: 36px;
+    margin-bottom: 20px;
+  }
+  ol, ul {
+    padding-left: 17px;
+    margin-bottom: 35px;
+    li {
+      font-family: 'BentonSans', 'Helvetica Neue', helvetica, arial, sans-serif;
+      color: #424242;
+      font-size: 1rem;
+      margin-bottom: .5em;
+      padding-left: 3px;
+      b {
+        font-family: 'BentonSans', 'Helvetica Neue', helvetica, arial, sans-serif;
+      }
+    }
+  }
+  .next-button {
+    margin-top: 24px;
+    height: 54px;
+    width: 100%;
+    padding: 1em;
+    background: #0071e3;
+    color: #fff;
+    font-weight: 400;
+    font-size: 17px;
+    font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
+    border-radius: .7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    &[disabled] {
+      opacity: .3;
+      cursor: default;
+    }
+  }
+}

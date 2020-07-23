@@ -1,0 +1,27 @@
+.screener-navbar {
+  .top {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    padding: 0 20px;
+    a {
+      margin-right: 15px;
+      color: #424242;
+      .back-arrow {
+        font-size: 25px;
+        line-height: 25px;
+        display: flex;
+      }
+    }
+    .title {
+      color: #424242;
+      font-size: 17px;
+      font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
+    }
+  }
+  .progress-bar {
+    height: 4px;
+    background-color: #E8F0FE;
+  }
+
+}
