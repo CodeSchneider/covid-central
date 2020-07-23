@@ -40,7 +40,7 @@ export default class SurveyConsent extends Component {
               </div>
               <div className="right">
                 <div className="primary-text">
-                  You’ll answer a few questions about symptoms and contact you’ve had with others.
+                  You’ll answer a few daily questions about Covid symptoms or exposures.
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@ export default class SurveyConsent extends Component {
               </div>
               <div className="right">
                 <div className="primary-text">
-                  Your answers will be shared with Georgia Tech & Stamps Health Services.
+                  Aggregate anonymous data on symptom trends will be shared with Georgia Tech and Stamps Health Services.
                 </div>
               </div>
             </div>

@@ -1,5 +1,11 @@
 form.form-screener {
   padding: 40px 25px;
+  fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
   .title {
     font-size: 1.75rem;
     font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
