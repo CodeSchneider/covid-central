@@ -127,7 +127,7 @@ export default class Q1 extends Component {
     return (
       <div className="screener" style={{"backgroundColor": "#F5F5F7"}}>
         <div ref={this.myRef}></div>
-        <Navbar back="/welcome" progress={50}/>
+        <Navbar back="/screener/consent" progress={50}/>
         <Formik
           initialValues={initialValues}
           enableReinitialize={true}
