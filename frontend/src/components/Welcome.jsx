@@ -132,7 +132,7 @@ export default class Welcome extends Component {
                         symptom checker
                       </div>
                       <div class="covid_check__title__second">
-                        Powered by CheckCOVID
+                        Powered by Georgia Tech
                       </div>
                     </div>
                   </div>

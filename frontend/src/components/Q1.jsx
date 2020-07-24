@@ -148,7 +148,7 @@ export default class Q1 extends Component {
             <form className="form-screener" onSubmit={handleSubmit}>
               <div class="title">Do you have any of the following?</div>
               <ol>
-                <li>Do you have a <span className="bold">fever</span> (temperature over 100.4º F or 38º C) without having taken any fever-reducing medications?</li>
+                <li>Do you have a <b>fever</b> (temperature over 100.4º F or 38º C) without having taken any fever-reducing medications?</li>
                 <li>Do you have a <b>loss of smell or taste?</b></li>
                 <li>Do you have a <b>cough?</b></li>
                 <li>Do you have <b>muscle aches?</b></li>
