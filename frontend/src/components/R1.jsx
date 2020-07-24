@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import doctor from '../assets/doctor.svg';
-import dcc_logo from '../assets/dcc_dark.svg';
+import cc_logo from '../assets/checkcovid_v1.svg';
 import gt_logo from '../assets/gt_dark_logo.svg';
 import { BsListOl } from "react-icons/bs";
 import { FaHandPaper } from "react-icons/fa";
@@ -25,7 +25,7 @@ export default class R1 extends Component {
           <div className="top">
             <div className="affiliation">
               <div className="affiliate-1">
-                <img src={dcc_logo}/>
+                <img src={cc_logo}/>
               </div>
               <div className="affiliate-2">
                 <img src={gt_logo}/>

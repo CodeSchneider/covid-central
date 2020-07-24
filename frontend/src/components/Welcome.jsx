@@ -17,6 +17,9 @@ import Test from "../icons/test";
 import Help from "../icons/help";
 import Dining from "../icons/dining";
 import Housing from "../icons/housing";
+// import dcc_logo from '../assets/dcc_dark.svg';
+import dcc_logo from '../assets/dcc_dark_v2.svg';
+import cc_logo from '../assets/checkcovid_v1.svg';
 const { Option } = Select;
 
 export default class Welcome extends Component {
@@ -116,19 +119,20 @@ export default class Welcome extends Component {
               <div className="empty">
               </div>
             </nav>
-            <a href="https://www.covidcheck.org/en/risk/?utm_source=gt&utm_medium=email&utm_campaign=prepilot" className="covid-check_wrapper">
+            <Link to="/screener/consent" className="covid-check_wrapper">
               <div className="covid-check">
                 <div class="covid-check__top">
                   <div class="covid-check__title-area">
                     <div class="covid-check__image">
-                      <img src={covid_check_icon}/>
+                      {/*<img src={covid_check_icon}/>*/}
+                      <img src={cc_logo}/>
                     </div>
                     <div class="covid-check__title">
                       <div class="covid_check__title__first">
                         symptom checker
                       </div>
                       <div class="covid_check__title__second">
-                        Powered by COVIDcheck
+                        Powered by CheckCOVID
                       </div>
                     </div>
                   </div>
@@ -142,7 +146,7 @@ export default class Welcome extends Component {
                   {/*<span>Check if you might have COVID-19<span></br><span>and what to do next</span>*/}
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="body">
             <div className="tiles-header">
@@ -378,7 +382,7 @@ export default class Welcome extends Component {
                             // colors: ['#53f'],
                             // colors: ['#5534FF'],
                             // colors: ['#42a5f5'],
-                            colors: [`#F37453`],
+                            colors: [`#f37453`],
                             legend: 'none',
                             baselineColor: 'none',
                             isStacked: false,
@@ -500,7 +504,7 @@ export default class Welcome extends Component {
                    }  ,
                     lineWidth: 1,
                     // colors: ['#a48fbd'],
-                    colors: ['#F37453'],
+                    colors: ['#f37453'],
                     legend: 'none',
                     // hAxis: {
                     //   ticks: ['6/18', '6/21', '6/24', '6/27'],
