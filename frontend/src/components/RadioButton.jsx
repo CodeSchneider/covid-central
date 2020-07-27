@@ -18,6 +18,10 @@ const cssRadioButton = css`
     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.1);
     box-shadow: 0 1px 3px rgba(0,0,0,.1);
     background-color: #fff;
+    svg {
+      flex: 0 0 22px;
+      margin-left: 15px;
+    }
   }
 
   .radioCheck {

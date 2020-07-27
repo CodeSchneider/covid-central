@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import cough from '../assets/cough_v3.svg';
-import dcc_logo from '../assets/dcc_dark.svg';
+import cc_logo from '../assets/checkcovid_v1.svg';
 import gt_logo from '../assets/gt_dark_logo.svg';
-import { BsListOl } from "react-icons/bs";
-import { FaHandPaper } from "react-icons/fa";
+import { BsListOl, BsShieldLockFill } from "react-icons/bs";
+import { FaHandPaper, FaUserLock } from "react-icons/fa";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 
 export default class SurveyConsent extends Component {
@@ -19,7 +19,7 @@ export default class SurveyConsent extends Component {
           <div className="top">
             <div className="affiliation">
               <div className="affiliate-1">
-                <img src={dcc_logo}/>
+                <img src={cc_logo}/>
               </div>
               <div className="affiliate-2">
                 <img src={gt_logo}/>
@@ -47,11 +47,22 @@ export default class SurveyConsent extends Component {
             <div className="line"></div>
             <div className="claim">
               <div className="left">
+                <BsShieldLockFill/>
+              </div>
+              <div className="right">
+                <div className="primary-text">
+                  The app does not capture or store any personally identifiable information.
+                </div>
+              </div>
+            </div>
+            <div className="line"></div>
+            <div className="claim">
+              <div className="left">
                 <FaHandPaper/>
               </div>
               <div className="right">
                 <div className="primary-text">
-                  Aggregate anonymous data on symptom trends will be shared with Georgia Tech and Stamps Health Services.
+                  Aggregate anonymous data on symptom trends will be shared with Georgia Tech health authorities.
                 </div>
               </div>
             </div>

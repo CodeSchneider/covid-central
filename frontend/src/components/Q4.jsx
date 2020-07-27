@@ -62,7 +62,7 @@ export default class Q4 extends Component {
       console.log('values: ',values);
       const { history } = this.props;
       if (values.symptoms) {
-        history.push ('/screener/r3');
+        history.push ('/screener/q3');
       } else {
         history.push ('/screener/r1');
       }

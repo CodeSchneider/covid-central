@@ -8,6 +8,7 @@ import Navbar from './Navbar';
 import RadioButton from './RadioButton';
 import { buildYup } from 'schema-to-yup'
 import isEmpty from 'lodash/isEmpty';
+import ScrollTo from './ScrollTo';
 const { Step } = Steps;
 
 export default class Q3 extends Component {
@@ -23,7 +24,8 @@ export default class Q3 extends Component {
         submitErrorSurvey: false,
         initialValues: {}
       }
-      this.myRef = React.createRef()
+      this.myRef = React.createRef();
+      this.inputRef = React.createRef();
   }
 
   handleSubmit = async (values, { setSubmitting, setStatus, resetForm }) => {
@@ -33,7 +35,7 @@ export default class Q3 extends Component {
       if (values.anySymptoms3 === "true") {
         history.push('/screener/r4');
       } else {
-        history.push('/screener/q4');
+        history.push('/screener/r3');
       }
       // const { history } = this.props;
       // const { slug } = this.state;
@@ -174,29 +176,37 @@ export default class Q3 extends Component {
                   }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
                   meta,
                 }) => (
-                  <div className="control">
-                    <RadioButton
-                      {...field}
-                      id="yes"
-                      value="true"
-                      isChecked={field.value === "true"}
-                      handleChange={field.onChange}
-                    >
-                      I'm experiencing at least one of these
-                    </RadioButton>
-                    <RadioButton
-                      {...field}
-                      id="no"
-                      value="false"
-                      isChecked={field.value === "false"}
-                      handleChange={field.onChange}
-                    >
-                      I do not have any of these
-                    </RadioButton>
-                  </div>
+                  <>
+                    <ScrollTo
+                      inputRef={this.inputRef}
+                      values={values}
+                      name={field.name}
+                    />
+                    <div className="control">
+                      <RadioButton
+                        {...field}
+                        id="yes"
+                        value="true"
+                        isChecked={field.value === "true"}
+                        handleChange={field.onChange}
+                      >
+                        I'm experiencing at least one of these
+                      </RadioButton>
+                      <RadioButton
+                        {...field}
+                        id="no"
+                        value="false"
+                        isChecked={field.value === "false"}
+                        handleChange={field.onChange}
+                      >
+                        I do not have any of these
+                      </RadioButton>
+                    </div>
+                  </>
                 )}
               </Field>
               <button
+                ref={this.inputRef}
                 type="submit"
                 className="next-button"
                 disabled={!values.anySymptoms3}

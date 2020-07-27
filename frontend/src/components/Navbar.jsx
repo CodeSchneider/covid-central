@@ -7,7 +7,7 @@ export default class Navbar extends Component {
     const { back, progress } = this.props;
     return (
       <div className="screener-navbar nav">
-        <div class="top">
+        <div className="top">
           <Link to={back}>
             <div className="back-arrow"><IoMdArrowBack/></div>
           </Link>
@@ -15,7 +15,7 @@ export default class Navbar extends Component {
             COVID‑19 self-assessment
           </div>
         </div>
-        <div class="progress-bar">
+        <div className="progress-bar">
         </div>
       </div>
     );
