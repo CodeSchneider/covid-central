@@ -18,6 +18,7 @@ export default class SurveyConsent extends Component {
   }
 
   showModal = () => {
+    console.log('sm');
     this.setState({
       showTerms: true
     });
