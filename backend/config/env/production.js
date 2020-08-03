@@ -6,7 +6,7 @@ const {
   MONGO_DATABASE,
   REDIS_HOSTNAME,
   REDIS_CONTAINER_PORT,
-  FRONTEND_URL
+  ALLOWED_URLS
 } = process.env;
 
 module.exports = {
@@ -29,9 +29,7 @@ module.exports = {
   },
   security: {
     cors: {
-      allowOrigins: [
-        FRONTEND_URL
-      ]
+      allowOrigins: ALLOWED_URLS.split(',')
     }
   },
   session: {

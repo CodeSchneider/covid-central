@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: covid-central-api
-        image: codeschneider/covid-central:latest
+        image: codeschneider/covid-central:{{DRONE_COMMIT_SHA}}
         imagePullPolicy: Always
         command: ["pm2-runtime", "app.js"]
         ports:
@@ -51,5 +51,5 @@ spec:
           value: my-redis-master
         - name: REDIS_CONTAINER_PORT
           value: "6379"
-        - name: FRONTEND_URL
-          value: https://covid-central.gatech.edu
+        - name: ALLOWED_URLS
+          value: https://covid-central.gatech.edu,https://covidcentral.gatech.edu
