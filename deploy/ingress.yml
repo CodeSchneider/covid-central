@@ -12,9 +12,9 @@ spec:
   - hosts:
     - covid-central.gatech.edu
     secretName: covid-central-tls
-  - hosts:
-    - covidcentral.gatech.edu
-    secretName: covidcentral-tls
+  # - hosts:
+  #   - covidcentral.gatech.edu
+  #   secretName: covidcentral-tls
   rules:
   - host: covid-central.gatech.edu
     http:
@@ -31,18 +31,18 @@ spec:
         backend:
           serviceName: covid-central-frontend-master
           servicePort: 80
-  - host: covidcentral.gatech.edu
-    http:
-      paths:
-      - path: /api/(.*)
-        backend:
-          serviceName: covid-central-api
-          servicePort: 80
-      - path: /app/v2/(.*)
-        backend:
-          serviceName: covid-central-frontend-develop
-          servicePort: 80
-      - path: /app/(.*)
-        backend:
-          serviceName: covid-central-frontend-master
-          servicePort: 80
+  # - host: covidcentral.gatech.edu
+  #   http:
+  #     paths:
+  #     - path: /api/(.*)
+  #       backend:
+  #         serviceName: covid-central-api
+  #         servicePort: 80
+  #     - path: /app/v2/(.*)
+  #       backend:
+  #         serviceName: covid-central-frontend-develop
+  #         servicePort: 80
+  #     - path: /app/(.*)
+  #       backend:
+  #         serviceName: covid-central-frontend-master
+  #         servicePort: 80
