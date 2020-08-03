@@ -80,6 +80,25 @@
             color: #515154;
             line-height: 20px;
           }
+          .link-full-terms {
+            display: flex;
+            align-items: center;
+            margin-top: 7px;
+            font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
+            .text {
+              color: #0071e3;
+              font-size: 14px;
+              cursor: pointer;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+            svg {
+              font-size: 11px;
+              margin-left: 2px;
+              color: #0071e3;
+            }
+          }
         }
       }
       .line {

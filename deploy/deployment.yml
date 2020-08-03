@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: covid-central-api
-        image: codeschneider/covid-central:latest
+        image: codeschneider/covid-central:{{DRONE_COMMIT_SHA}}
         imagePullPolicy: Always
         command: ["pm2-runtime", "app.js"]
         ports:
