@@ -20,7 +20,7 @@ export default class SurveyConsent extends Component {
   showModal = () => {
     this.setState({
       showTerms: true
-    })
+    });
   }
 
   handleCancel = e => {
