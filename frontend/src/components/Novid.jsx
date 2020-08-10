@@ -45,9 +45,8 @@ export default class Novid extends Component {
             <div className="time">
               <AiOutlineClockCircle/>&nbsp;August 7th, 2020
             </div>
-            <p>Use the <a href="https://novid.org">NOVID</a> app to anonymously receive alerts about your potential exposure to COVID.  The app does not capture any personally identifiable information.  Full details on NOVID’s security, privacy, and use of permissions can be found <a href="https://novid.org#anonymity">here</a>.</p>
+            <p>Use the <a href="https://novid.org">NOVID</a> app to anonymously receive alerts about your potential exposure to COVID.  The app does not capture any personally identifiable information.  Full details on NOVID’s security, privacy, and use of permissions can be found <Link to="/privacy-evaluation">here</Link>.</p>
             <p>When you have installed the app, go to Settings and enter the <span>community code BUZZ to join the GT Community</span>.</p>
-            <Link to="privacy-evaluation" className="privacy-link">Read Privacy Evaluation&nbsp;<IoMdArrowForward/></Link>
           </div>
         </div>
       </>
