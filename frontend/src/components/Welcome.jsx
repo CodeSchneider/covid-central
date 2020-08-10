@@ -151,7 +151,7 @@ export default class Welcome extends Component {
           <div className="body">
             <div className="tiles-header">
               <div className="tiles-header__text">
-                News and Updates
+                Exposure Notification
               </div>
               <div className="tiles-header__link">
                 <Link to="/novid">See More</Link>
