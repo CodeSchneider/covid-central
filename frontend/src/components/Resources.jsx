@@ -103,7 +103,7 @@ export default class Resources extends Component {
       { title: 'Date Last on Campus', dataIndex: 'dateLastOnCampus', key: 'dateLastOnCampus' },
     ];
     return (
-      <>
+      <div className="workspace">
         <div className="resources">
           <nav className="resources-nav">
             <div className="first">
@@ -179,7 +179,7 @@ export default class Resources extends Component {
                   <BsChevronRight/>
                 </div>
               </a>
-              <a href="http://health.gatech.edu/coronavirus/prevention-wellbeing#testing" className="resources-tile">
+              <a href="http://health.gatech.edu/coronavirus/testing-launched" className="resources-tile">
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">
                     <div className="tile-icon">
@@ -282,7 +282,7 @@ export default class Resources extends Component {
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

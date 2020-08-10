@@ -19,27 +19,29 @@ export default class R4 extends Component {
 
   render() {
     return (
-      <div className="results">
-        <div ref={this.myRef}></div>
-        <div className="header">
-          <div className="top">
-            <div className="affiliation">
-              <div className="affiliate-1">
-                <img src={cc_logo}/>
+      <div className="workspace">
+        <div className="results">
+          <div ref={this.myRef}></div>
+          <div className="header">
+            <div className="top">
+              <div className="affiliation">
+                <div className="affiliate-1">
+                  <img src={cc_logo}/>
+                </div>
+                <div className="affiliate-2">
+                  <img src={gt_logo}/>
+                </div>
               </div>
-              <div className="affiliate-2">
-                <img src={gt_logo}/>
-              </div>
+              <Link to="/welcome" className="cancel">Done</Link>
             </div>
-            <Link to="/welcome" className="cancel">Done</Link>
+            <div className="artwork">
+              <img src={doctor}/>
+            </div>
           </div>
-          <div className="artwork">
-            <img src={doctor}/>
+          <div className="body">
+            <h1 className="title">You Should Call 911.</h1>
+            <div className="subtitle">Based on your reported symptoms, you should seek care immediately.</div>
           </div>
-        </div>
-        <div className="body">
-          <h1 className="title">You Should Call 911.</h1>
-          <div className="subtitle">Based on your reported symptoms, you should seek care immediately.</div>
         </div>
       </div>
     );

@@ -20,16 +20,20 @@ import T1 from './components/T1';
 import T2 from './components/T2';
 import T3 from './components/T3';
 import Resources from './components/Resources';
+import PrivacyEvaluation from './components/PrivacyEvaluation';
+import Novid from './components/Novid';
 
 function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       {/*<Route path="/" component={Tabs}/>*/}
       {/*Refactor with HOC checking for mode...all comps below as well*/}
-      <div className="workspace">
+      {/*<div className="workspace">*/}
         <Switch>
           <Route exact path="/welcome" component={Welcome}/>
           <Route exact path="/resources" component={Resources}/>
+          <Route exact path="/novid" component={Novid}/>
+          <Route exact path="/privacy-evaluation" component={PrivacyEvaluation}/>
           <Route exact path="/screener/consent" component={Consent}/>
           <Route exact path="/screener" component={Consent}/>
           <Route exact path="/screener/q1" component={Q1}/>
@@ -45,7 +49,7 @@ function App() {
           <Route exact path="/surveys/follow-up/terminals/fail" component={T3}/>
           <Redirect to="/welcome"/>
         </Switch>
-      </div>
+      {/*</div>*/}
     </Router>
   );
 }

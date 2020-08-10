@@ -157,103 +157,105 @@ export default class Q4 extends Component {
     });
 
     return (
-      <div className="screener" style={{"backgroundColor": "#F5F5F7"}}>
-        <div ref={this.myRef}></div>
-        <Navbar back="/screener/q1" progress={50}/>
-        <Formik
-          initialValues={initialValues}
-          enableReinitialize={true}
-          validationSchema={validationSchema}
-          onSubmit={(values, actions) => this.handleSubmit(values, actions)}
-          render={({
-            values,
-            errors,
-            status,
-            touched,
-            handleBlur,
-            handleChange,
-            handleSubmit,
-            isSubmitting,
-            setFieldValue,
-            setFieldTouched,
-          }) => (
-            <form className="form-screener" onSubmit={handleSubmit}>
-              <div class="title">Which of the follow symptoms do you have?</div>
-              <CheckboxGroup
-                id="symptoms"
-                label="Which of these?"
-                value={values.symptoms}
-                error={errors.symptoms}
-                touched={touched.symptoms}
-                onChange={setFieldValue}
-                onBlur={setFieldTouched}
-              >
-                <Field
-                  component={Checkbox}
-                  name="symptoms"
-                  id="checkbox1"
-                  label="Fever"
-                />
-                <Field
-                  component={Checkbox}
-                  name="symptoms"
-                  id="checkbox2"
-                  label="Loss of smell or taste"
-                />
-                <Field
-                  component={Checkbox}
-                  name="symptoms"
-                  id="checkbox3"
-                  label="Cough"
-                />
-                <Field
-                  component={Checkbox}
-                  name="symptoms"
-                  id="checkbox4"
-                  label="Muscle aches"
-                />
-                <Field
-                  component={Checkbox}
-                  name="symptoms"
-                  id="checkbox5"
-                  label="Sore throat"
-                />
-                <Field
-                  component={Checkbox}
-                  name="symptoms"
-                  id="checkbox6"
-                  label="Shortness of breath"
-                />
-                <Field
-                  component={Checkbox}
-                  name="symptoms"
-                  id="checkbox7"
-                  label="Chills"
-                />
-                <Field
-                  component={Checkbox}
-                  name="symptoms"
-                  id="checkbox8"
-                  label="Headache"
-                />
-                <Field
-                  component={Checkbox}
-                  name="symptoms"
-                  id="checkbox9"
-                  label="Nausea, vomiting, diarrhea, or loss of appetite"
-                />
-              </CheckboxGroup>
-              <button
-                type="submit"
-                className="next-button"
-                disabled={!values.symptoms.length > 0 }
-                loading={false}
-              >
-                Next
-              </button>
-            </form>
-          )}
-        />
+      <div className="workspace">
+        <div className="screener" style={{"backgroundColor": "#F5F5F7"}}>
+          <div ref={this.myRef}></div>
+          <Navbar back="/screener/q1" progress={50}/>
+          <Formik
+            initialValues={initialValues}
+            enableReinitialize={true}
+            validationSchema={validationSchema}
+            onSubmit={(values, actions) => this.handleSubmit(values, actions)}
+            render={({
+              values,
+              errors,
+              status,
+              touched,
+              handleBlur,
+              handleChange,
+              handleSubmit,
+              isSubmitting,
+              setFieldValue,
+              setFieldTouched,
+            }) => (
+              <form className="form-screener" onSubmit={handleSubmit}>
+                <div class="title">Which of the follow symptoms do you have?</div>
+                <CheckboxGroup
+                  id="symptoms"
+                  label="Which of these?"
+                  value={values.symptoms}
+                  error={errors.symptoms}
+                  touched={touched.symptoms}
+                  onChange={setFieldValue}
+                  onBlur={setFieldTouched}
+                >
+                  <Field
+                    component={Checkbox}
+                    name="symptoms"
+                    id="checkbox1"
+                    label="Fever"
+                  />
+                  <Field
+                    component={Checkbox}
+                    name="symptoms"
+                    id="checkbox2"
+                    label="Loss of smell or taste"
+                  />
+                  <Field
+                    component={Checkbox}
+                    name="symptoms"
+                    id="checkbox3"
+                    label="Cough"
+                  />
+                  <Field
+                    component={Checkbox}
+                    name="symptoms"
+                    id="checkbox4"
+                    label="Muscle aches"
+                  />
+                  <Field
+                    component={Checkbox}
+                    name="symptoms"
+                    id="checkbox5"
+                    label="Sore throat"
+                  />
+                  <Field
+                    component={Checkbox}
+                    name="symptoms"
+                    id="checkbox6"
+                    label="Shortness of breath"
+                  />
+                  <Field
+                    component={Checkbox}
+                    name="symptoms"
+                    id="checkbox7"
+                    label="Chills"
+                  />
+                  <Field
+                    component={Checkbox}
+                    name="symptoms"
+                    id="checkbox8"
+                    label="Headache"
+                  />
+                  <Field
+                    component={Checkbox}
+                    name="symptoms"
+                    id="checkbox9"
+                    label="Nausea, vomiting, diarrhea, or loss of appetite"
+                  />
+                </CheckboxGroup>
+                <button
+                  type="submit"
+                  className="next-button"
+                  disabled={!values.symptoms.length > 0 }
+                  loading={false}
+                >
+                  Next
+                </button>
+              </form>
+            )}
+          />
+        </div>
       </div>
     );
   }

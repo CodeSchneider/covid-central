@@ -9,6 +9,7 @@ import { BsChevronRight } from "react-icons/bs";
 import covid_check_icon from '../assets/covid-check-icon.svg';
 import gt_white_logo from '../assets/gt_white_logo.svg';
 import covid_central_logo from '../assets/covid_central_logo_white.svg';
+import novid_white from '../assets/novid_white.svg';
 import hex from '../assets/hex3.png';
 import Mask from "../icons/mask";
 import Crc from "../icons/crc";
@@ -75,7 +76,6 @@ export default class Welcome extends Component {
       reports,
       primaryColor
     } = this.state;
-    console.log('VIZ STATE: ',visible);
     const styles={
 			title:{
 				backgroundColor: '#00bcd4',
@@ -97,7 +97,7 @@ export default class Welcome extends Component {
       { title: 'Date Last on Campus', dataIndex: 'dateLastOnCampus', key: 'dateLastOnCampus' },
     ];
     return (
-      <>
+      <div className="workspace">
         <div className="welcome">
           <div className="head">
             <div className="hexagon-background">
@@ -149,6 +149,32 @@ export default class Welcome extends Component {
             </Link>
           </div>
           <div className="body">
+            <div className="tiles-header">
+              <div className="tiles-header__text">
+                News and Updates
+              </div>
+              <div className="tiles-header__link">
+                <Link to="/novid">See More</Link>
+              </div>
+            </div>
+            <Link to="/novid">
+              <div className="news">
+                <div className="icon-wrapper">
+                  <img src={novid_white}/>
+                </div>
+                <div className="text-wrapper">
+                  <div className="header">
+                  Help Protect the GT Community
+                  </div>
+                  <div className="description">
+                    Use the NOVID app to anonymously receive alerts about your potential exposure to COVID.
+                  </div>
+                  <div className="read-more">
+                    Read more...
+                  </div>
+                </div>
+              </div>
+            </Link>
             <div className="tiles-header">
               <div className="tiles-header__text">
                 Campus Resources
@@ -215,7 +241,7 @@ export default class Welcome extends Component {
                   <BsChevronRight/>
                 </div>
               </a>
-              <a href="http://health.gatech.edu/coronavirus/prevention-wellbeing#testing" className="tile">
+              <a href="http://health.gatech.edu/coronavirus/testing-launched" className="tile">
                 <div className="tile-left">
                   <div className="tile-icon__wrapper">
                     <div className="tile-icon">
@@ -546,7 +572,7 @@ export default class Welcome extends Component {
             </div>
           </SwipeableBottomSheet>
         </div>
-      </>
+      </div>
     );
   }
 }

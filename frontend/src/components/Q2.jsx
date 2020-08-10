@@ -127,84 +127,86 @@ export default class Q2 extends Component {
     });
 
     return (
-      <div className="screener" style={{"backgroundColor": "#F5F5F7"}}>
-        <div ref={this.myRef}></div>
-        <Navbar back="/screener/q1" progress={50}/>
-        <Formik
-          initialValues={initialValues}
-          enableReinitialize={true}
-          validationSchema={validationSchema}
-          onSubmit={(values, actions) => this.handleSubmit(values, actions)}
-          render={({
-            values,
-            errors,
-            status,
-            touched,
-            handleBlur,
-            handleChange,
-            handleSubmit,
-            isSubmitting,
-          }) => (
-            <form className="form-screener" onSubmit={handleSubmit}>
-              <div class="title">Have either of the following occurred?</div>
-              <ul>
-                <li>Have you, or anyone you have been in close contact with, been <b>diagnosed with Covid-19 or placed in quarantine</b> for possible exposure to Covid-19 within the last two weeks?</li>
-                <li>Have you been <b>asked to self-isolate or quarantine</b> by a medical professional or a local public health official within the last two weeks?</li>
-              </ul>
-              <Field name="anySymptoms2">
-                {({
-                  field, // { name, value, onChange, onBlur }
-                  form: {
-                    touched,
-                    errors,
-                    values,
-                    setFieldValue,
-                    setStatus,
-                    status
-                  }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
-                  meta,
-                }) => (
-                  <>
-                    <ScrollTo
-                      inputRef={this.inputRef}
-                      values={values}
-                      name={field.name}
-                    />
-                    <div className="control">
-                      <RadioButton
-                        {...field}
-                        id="yes"
-                        value="true"
-                        isChecked={field.value === "true"}
-                        handleChange={field.onChange}
-                      >
-                        I'm experiencing at least one of these
-                      </RadioButton>
-                      <RadioButton
-                        {...field}
-                        id="no"
-                        value="false"
-                        isChecked={field.value === "false"}
-                        handleChange={field.onChange}
-                      >
-                        I do not have any of these
-                      </RadioButton>
-                    </div>
-                  </>
-                )}
-              </Field>
-              <button
-                ref={this.inputRef}
-                type="submit"
-                className="next-button"
-                disabled={!values.anySymptoms2}
-                loading={false}
-              >
-                Next
-              </button>
-            </form>
-          )}
-        />
+      <div className="workspace">
+        <div className="screener" style={{"backgroundColor": "#F5F5F7"}}>
+          <div ref={this.myRef}></div>
+          <Navbar back="/screener/q1" progress={50}/>
+          <Formik
+            initialValues={initialValues}
+            enableReinitialize={true}
+            validationSchema={validationSchema}
+            onSubmit={(values, actions) => this.handleSubmit(values, actions)}
+            render={({
+              values,
+              errors,
+              status,
+              touched,
+              handleBlur,
+              handleChange,
+              handleSubmit,
+              isSubmitting,
+            }) => (
+              <form className="form-screener" onSubmit={handleSubmit}>
+                <div class="title">Have either of the following occurred?</div>
+                <ul>
+                  <li>Have you, or anyone you have been in close contact with, been <b>diagnosed with Covid-19 or placed in quarantine</b> for possible exposure to Covid-19 within the last two weeks?</li>
+                  <li>Have you been <b>asked to self-isolate or quarantine</b> by a medical professional or a local public health official within the last two weeks?</li>
+                </ul>
+                <Field name="anySymptoms2">
+                  {({
+                    field, // { name, value, onChange, onBlur }
+                    form: {
+                      touched,
+                      errors,
+                      values,
+                      setFieldValue,
+                      setStatus,
+                      status
+                    }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+                    meta,
+                  }) => (
+                    <>
+                      <ScrollTo
+                        inputRef={this.inputRef}
+                        values={values}
+                        name={field.name}
+                      />
+                      <div className="control">
+                        <RadioButton
+                          {...field}
+                          id="yes"
+                          value="true"
+                          isChecked={field.value === "true"}
+                          handleChange={field.onChange}
+                        >
+                          I'm experiencing at least one of these
+                        </RadioButton>
+                        <RadioButton
+                          {...field}
+                          id="no"
+                          value="false"
+                          isChecked={field.value === "false"}
+                          handleChange={field.onChange}
+                        >
+                          I do not have any of these
+                        </RadioButton>
+                      </div>
+                    </>
+                  )}
+                </Field>
+                <button
+                  ref={this.inputRef}
+                  type="submit"
+                  className="next-button"
+                  disabled={!values.anySymptoms2}
+                  loading={false}
+                >
+                  Next
+                </button>
+              </form>
+            )}
+          />
+        </div>
       </div>
     );
   }

@@ -1,0 +1,183 @@
+.novid {
+  .banner {
+    height: 300px;
+    // background: linear-gradient(5deg, #003057, rgba(0, 48, 87, 0.7));
+    background-color: #eeeeee;
+    position: relative;
+    overflow: hidden;
+    .text-wrapper {
+      padding-left: 33px;
+      max-width: 1200px;
+      margin: 20px auto 0;
+      position: relative;
+      .back-link {
+        margin-bottom: 80px;
+        display: flex;
+        align-items: center;
+        color: #707070;
+        font-family: 'BentonSans', 'Helvetica Neue', helvetica, arial, sans-serif;
+        font-size: 14px;
+        svg {
+          margin-right: 6px;
+        }
+      }
+      @media (max-width: 569px) {
+        .back-link {
+          margin-bottom: 60px;
+          font-size: 12px;
+        }
+      }
+      .header {
+        color: #616161;
+        font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
+        text-transform: uppercase;
+        font-size: 23px;
+        line-height: 29px;
+        br {
+          display: none;
+        }
+      }
+      .subtitle {
+        color: #757575;
+        font-family: 'BentonSans', 'Helvetica Neue', helvetica, arial, sans-serif;
+        text-transform: uppercase;
+        font-size: 17px;
+        line-height: 24px;
+        margin-top: 5px;
+        br {
+          display: none;
+        }
+      }
+      .download-links {
+        display: flex;
+        margin-top: 20px;
+        .apple {
+          width: 114px;
+        }
+        .play {
+          width: 114px;
+          margin-left: 10px;
+        }
+      }
+      .phone-image-2 {
+        position: absolute;
+        width: 300px;
+        top: 0px;
+        left: 500px;
+      }
+      @media (max-width: 700px) {
+        .phone-image-2 {
+          display: none;
+        }
+      }
+      @media (max-width: 569px) {
+        .header {
+          br {
+            display: block;
+          }
+        }
+        .subtitle {
+          br {
+            display: block;
+          }
+        }
+        .download-links {
+          .apple {
+            width: 100px;
+          }
+          .play {
+            width: 100px
+          }
+        }
+      }
+      @media (max-width: 400px) {
+        .header {
+          font-size: 20px;
+        }
+        .subtitle {
+          font-size: 16px;
+        }
+        .download-links {
+          .apple {
+            width: 81px;
+          }
+          .play {
+            width: 81px
+          }
+        }
+      }
+    }
+    .phone-image {
+      position: absolute;
+      right: -29px;
+      top: 33px;
+      width: 190px;
+      display: none;
+      @media (max-width: 370px) {
+        right: -44px;
+      }
+      @media (max-width: 350px) {
+        right: -85px;
+      }
+      @media (max-width: 300px) {
+        right: -119px;
+      }
+      @media (max-width: 700px) {
+        display: block;
+      }
+    }
+  }
+  .article {
+    padding: 50px 33px;
+    max-width: 1200px;
+    margin: auto;
+    @media (max-width: 400px) {
+      padding: 30px 33px;
+    }
+    .title {
+      color: #444;
+      font-size: 22px;
+      font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
+      line-height: 27px;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 400px) {
+      .title {
+        br {
+          display: none;
+        }
+      }
+    }
+    p {
+      line-height: 1.6;
+      color: #707070;
+      font-family: 'BentonSans', 'Helvetica Neue', helvetica, arial, sans-serif;
+      font-size: 16px;
+      a {
+        color: #0071E3;
+        text-decoration: underline;
+      }
+      span {
+        font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
+      }
+    }
+    .time {
+      font-family: 'BentonSans', 'Helvetica Neue', helvetica, arial, sans-serif;
+      color: #9e9e9e;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      svg {
+        margin-right: 3px;
+      }
+    }
+    .privacy-link {
+      display: flex;
+      align-items: center;
+      line-height: 1.6;
+      color: #707070;
+      font-family: 'BentonSans', 'Helvetica Neue', helvetica, arial, sans-serif;
+      font-size: 16px;
+    }
+  }
+}
