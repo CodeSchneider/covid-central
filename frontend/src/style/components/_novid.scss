@@ -134,7 +134,7 @@
     }
   }
   .article {
-    padding: 50px 33px;
+    padding: 50px 33px 20px;
     max-width: 1200px;
     margin: auto;
     @media (max-width: 400px) {
@@ -185,5 +185,49 @@
       font-family: 'BentonSans', 'Helvetica Neue', helvetica, arial, sans-serif;
       font-size: 16px;
     }
+  }
+  .faq {
+    padding: 0px 33px 20px;
+    max-width: 1200px;
+    margin: auto;
+    .header {
+      color: #444;
+      font-size: 20px;
+      font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
+      line-height: 27px;
+      margin-bottom: 20px;
+    }
+    .questions {
+      .question {
+        .question-header {
+          color: #444;
+          font-size: 18px;
+          font-family: 'BentonSans', 'Helvetica Neue', helvetica, arial, sans-serif;
+          line-height: 27px;
+          margin-bottom: 10px;
+        }
+        .question-content {
+          line-height: 1.6;
+          color: #707070;
+          font-family: 'BentonSans', 'Helvetica Neue', helvetica, arial, sans-serif;
+          font-size: 16px;
+          margin-bottom: 20px;
+          a {
+            color: #0071E3;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .contact-us {
+    padding: 0px 33px 20px;
+    max-width: 1200px;
+    margin: auto;
+    color: #444;
+    font-size: 16px;
+    font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
+    line-height: 27px;
+    margin-bottom: 10px;
   }
 }
