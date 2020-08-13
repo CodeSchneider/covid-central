@@ -157,7 +157,7 @@ export default class Novid extends Component {
               </div>
             </div>
           </div>
-          <div className="contact-us">Have feedback on NOVID at GT?  Contact us at <u>novid@gtri.gatech.edu</u>.</div>
+          <div className="contact-us">Have feedback on NOVID at GT?  Contact us at <a href="mailto:novid@gtri.gatech.edu"><u>novid@gtri.gatech.edu</u></a>.</div>
         </div>
       </>
     );
