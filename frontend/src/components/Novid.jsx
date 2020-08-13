@@ -88,7 +88,7 @@ export default class Novid extends Component {
                 Is NOVID accurate in capturing exposures?
                 </div>
                 <div className="question-content">
-                See detailed performance metrics available on <a href="https://novid.org">novid.org</a> and in <a href="https://www.novid.org/downloads/20200625-accuracy.pdf">this study</a>. Because of iOS restrictions on running apps in the background, use of NOVID's low-power Standby Mode will significantly improve interaction detection involving iOS phones.  For iOS users, we recommend activating and leaving on NOVID Standby Mode whenever you enter a building, class, or gathering.
+                See detailed performance metrics available on <a href="https://novid.org">novid.org</a> and in <a href="https://www.novid.org/downloads/20200625-accuracy.pdf">this study</a>. Because of iOS restrictions on running apps in the background, use of NOVID's low-power Standby Mode will significantly improve interaction detection involving iOS phones.  <span className="highlight">For iOS users, we recommend activating and leaving on NOVID Standby Mode whenever you enter a building, class, or gathering.</span>
                 </div>
               </div>
               <div className="question">
