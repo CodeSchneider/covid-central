@@ -1,3 +1,5 @@
+const moment = require("moment");
+
 module.exports = {
   table_1: function($) {
     let lastUpdated,
@@ -8,7 +10,7 @@ module.exports = {
     $(firstRow).find('td').each((index, element) => {
       switch(index) {
         case 0:
-          lastUpdated = $(element).text();
+          lastUpdated = moment($(element).text(), "MMMM DD, YYYY").format("MMM DD, YYYY");
         case 1:
           newReportsToday = $(element).text();
         case 2:
