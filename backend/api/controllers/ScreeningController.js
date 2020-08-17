@@ -14,7 +14,10 @@ module.exports = {
         ...score,
         createdAt: time.toISOString()
       };
-      const client = await MongoClient.connect(mongoConn, {});
+      // FIX this local/prod connection issue...
+      const mongoUrl = 'mongodb://test:test@my-release-mongodb:27017/test';
+      const dbName = 'test';
+      const client = await MongoClient.connect(mongoUrl, {});
       const db = await client.db(dbName);
       await db.collection('screening.raw').insertOne(screening);
       await client.close();
