@@ -3,4 +3,5 @@ module.exports.routes = {
   'get /surveys/:surveySlug': 'SurveyController.view',
   'post /surveys/:surveySlug/submissions': 'SubmissionController.new',
   'get /metrics': 'MetricController.last',
+  'post /screenings': 'ScreeningController.new'
 };
