@@ -25,7 +25,7 @@ export default class CheckboxGroup extends Component {
   };
 
   render() {
-    const { value, error, touched, label, className, children } = this.props;
+    const { value, name, error, touched, label, className, children } = this.props;
 
     const classes = classNames(
       "input-field",
@@ -48,7 +48,8 @@ export default class CheckboxGroup extends Component {
               field: {
                 value: value.includes(child.props.id),
                 onChange: this.handleChange,
-                onBlur: this.handleBlur
+                onBlur: this.handleBlur,
+                name: name
               }
             });
           })}

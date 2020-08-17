@@ -8,6 +8,7 @@ import { FaHandPaper, FaUserLock } from "react-icons/fa";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { FiChevronRight } from "react-icons/fi";
 import { Modal } from 'antd';
+import { Field } from 'formik';
 
 export default class SurveyConsent extends Component {
   constructor(props) {
@@ -31,6 +32,7 @@ export default class SurveyConsent extends Component {
   };
 
   render() {
+    const { history } = this.props;
     return (
       <div className="workspace">
         <div className="consent">
@@ -123,12 +125,34 @@ export default class SurveyConsent extends Component {
               <div className="line"></div>
             </div>
             <div className="buttons">
-              <Link to="/screener/q1" className="button button-1">
-              I agree
-              </Link>
-              <Link to="/welcome" className="button button-2">
-              I don't agree
-              </Link>
+              <Field name="consent">
+                {({
+                  field,
+                  form: { touched, errors, setFieldValue, values },
+                  meta
+                }) => (
+                  <>
+                    <div
+                      className="button button-1"
+                      onClick={() => {
+                        setFieldValue('consent', true);
+                        history.push('/screener/q1');
+                      }}
+                    >
+                      I agree
+                    </div>
+                    <div
+                      className="button button-2"
+                      onClick={() => {
+                        setFieldValue('consent', false);
+                        history.push('/welcome');
+                      }}
+                    >
+                      I don't agree
+                    </div>
+                  </>
+                )}
+              </Field>
             </div>
           </div>
         </div>

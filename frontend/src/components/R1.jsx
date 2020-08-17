@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import doctor from '../assets/doctor.svg';
 import cc_logo from '../assets/checkcovid_v1.svg';
 import gt_logo from '../assets/gt_dark_logo.svg';
-import { BsListOl } from "react-icons/bs";
-import { FaHandPaper } from "react-icons/fa";
-import { IoIosCheckmarkCircle } from "react-icons/io";
+import AutoSubmit from './AutoSubmit';
 
 export default class R1 extends Component {
   constructor(props) {
@@ -84,6 +82,7 @@ export default class R1 extends Component {
                 Done
               </Link>
             </div>
+            <AutoSubmit/>
           </div>
         </div>
       </div>

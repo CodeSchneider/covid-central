@@ -1,5 +1,6 @@
 import * as React from "react";
 import { css, cx } from "emotion";
+import slugify from "slugify";
 
 const cssCheckbox = css`
   font-size: 17px;
@@ -74,14 +75,12 @@ const cssCheckbox = css`
   }
 `;
 
-function Checkbox({
+const Checkbox = ({
   field: { name, value, onChange, onBlur },
-  form: { errors, touched, setFieldValue },
   id,
   label,
-  className,
   ...props
-}) {
+}) => {
   return (
     <div className={cssCheckbox}>
       <input

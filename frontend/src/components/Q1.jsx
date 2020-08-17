@@ -1,293 +1,107 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Radio, Alert, Steps } from 'antd';
-import { Formik, Field } from 'formik';
-import * as Yup from 'yup';
-import API from '../api';
+import { useHistory } from 'react-router-dom';
+import { Field, useFormikContext } from 'formik';
 import Navbar from './Navbar';
 import RadioButton from './RadioButton';
-import { buildYup } from 'schema-to-yup'
-import isEmpty from 'lodash/isEmpty';
 import ScrollTo from './ScrollTo';
-const { Step } = Steps;
+
+const NextButton = React.forwardRef((props, ref) => {
+  const { values } = useFormikContext();
+  const { push } = useHistory();
+  function handleNext() {
+    if (values.any_symptoms === "yes") {
+      push('/screener/q4');
+    } else {
+      push('/screener/q2');
+    }
+  }
+  return (
+    <button
+      ref={ref}
+      className="next-button"
+      disabled={!values.any_symptoms}
+      onClick={() => handleNext()}
+      loading={false}
+    >
+      Next
+    </button>
+  )
+});
 
 export default class Q1 extends Component {
   constructor(props) {
-      super(props)
-      this.state = {
-        slug: null,
-        loadingSurvey: true,
-        loadedSurvey: false,
-        loadErrorSurvey: false,
-        submittingSurvey: false,
-        submittedSurvey: false,
-        submitErrorSurvey: false,
-        initialValues: {}
-      }
-      this.myRef = React.createRef();
-      this.inputRef = React.createRef();
-  }
-
-  handleSubmit = async (values, { setSubmitting, setStatus, resetForm }) => {
-    try {
-      console.log('values: ',values);
-      const { history } = this.props;
-      if (values.anySymptoms === "true") {
-        history.push ('/screener/q4');
-      } else {
-        history.push ('/screener/q2');
-      }
-      // const { history } = this.props;
-      // const { slug } = this.state;
-      // const { data: { next } } = await API.post(`surveys/${slug}/submissions`, values);
-      // history.push(next);
-    } catch(e) {
-      console.log(e);
-      // setStatus(e || "Problem saving code. Try again.");
-    }
+    super(props)
+    this.topRef = React.createRef();
+    this.buttonRef = React.createRef();
   }
 
   componentDidMount = async () => {
-    this.myRef.current.scrollIntoView({ behavior: 'auto', block: 'start' });
+    this.topRef.current.scrollIntoView({ behavior: 'auto', block: 'start' });
   }
 
-  // componentDidUpdate = async (prevProps) => {
-  //   try {
-  //     const { slug } = this.props.match.params;
-  //     const { slug : prevSlug } = prevProps.match.params;
-  //     if (slug !== prevSlug) {
-  //       this.myRef.current.scrollIntoView({ behavior: 'auto', block: 'start' });
-  //       const { data: {
-  //         content,
-  //         submissionSchema,
-  //         instructions,
-  //         navExtra
-  //       }} = await API.get(`surveys/${slug}`);
-  //       const initialValues = content.allIds.reduce((acc, questionId) => {
-  //         return {
-  //           ...acc,
-  //           [questionId]: null
-  //         }
-  //       }, {});
-  //       this.setState({
-  //         slug,
-  //         content,
-  //         instructions,
-  //         navExtra,
-  //         submissionSchema,
-  //         initialValues,
-  //         loadingSurvey: false,
-  //         loadedSurvey: true,
-  //         loadErrorSurvey: false
-  //       });
-  //     }
-  //   } catch(e) {
-  //     console.log('e: ',e);
-  //   }
-  // }
-  //
-  // componentDidMount = async () => {
-  //   try {
-  //     const { slug } = this.props.match.params;
-  //     const { data: {
-  //       content,
-  //       submissionSchema,
-  //       instructions,
-  //       navExtra
-  //     }} = await API.get(`surveys/${slug}`);
-  //     const initialValues = content.allIds.reduce((acc, questionId) => {
-  //       return {
-  //         ...acc,
-  //         [questionId]: null
-  //       }
-  //     }, {});
-  //     this.setState({
-  //       slug,
-  //       content,
-  //       instructions,
-  //       navExtra,
-  //       submissionSchema,
-  //       initialValues,
-  //       loadingSurvey: false,
-  //       loadedSurvey: true,
-  //       loadErrorSurvey: false
-  //     });
-  //   } catch(e) {
-  //     console.log('e: ',e);
-  //   }
-  // }
   render() {
-    const initialValues = {
-      anySymptoms: ""
-    };
-
-    const validationSchema = Yup.object().shape({
-      anySymptoms: Yup.string()
-        .required('Required')
-    });
-
     return (
       <div className="workspace">
         <div className="screener" style={{"backgroundColor": "#F5F5F7"}}>
-          <div ref={this.myRef}></div>
+          <div ref={this.topRef}></div>
           <Navbar back="/screener/consent" progress={50}/>
-          <Formik
-            initialValues={initialValues}
-            enableReinitialize={true}
-            validationSchema={validationSchema}
-            onSubmit={(values, actions) => this.handleSubmit(values, actions)}
-            render={({
-              values,
-              errors,
-              status,
-              touched,
-              handleBlur,
-              handleChange,
-              handleSubmit,
-              isSubmitting,
-            }) => (
-              <form className="form-screener" onSubmit={handleSubmit}>
-                <div class="title">Do you have any of the following?</div>
-                <ol>
-                  <li>Do you have a <b>fever</b> (temperature over 100.4º F or 38º C) without having taken any fever-reducing medications?</li>
-                  <li>Do you have a <b>loss of smell or taste?</b></li>
-                  <li>Do you have a <b>cough?</b></li>
-                  <li>Do you have <b>muscle aches?</b></li>
-                  <li>Do you have a <b>sore throat?</b></li>
-                  <li>Do you have <b>shortness of breath?</b></li>
-                  <li>Do you have <b>chills?</b></li>
-                  <li>Do you have a new or unusual <b>headache?</b></li>
-                  <li>Have you experienced new onset of any <b>gastrointestinal symptoms</b> such as nausea, vomiting, diarrhea, or loss of appetite in the last few days?</li>
-                </ol>
-                <Field name="anySymptoms">
-                  {({
-                    field, // { name, value, onChange, onBlur }
-                    form: {
-                      touched,
-                      errors,
-                      values,
-                      setFieldValue,
-                      setStatus,
-                      status
-                    }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
-                    meta,
-                  }) => (
-                    <>
-                      <ScrollTo
-                        inputRef={this.inputRef}
-                        values={values}
-                        name={field.name}
-                      />
-                      <div className="control">
-                        <RadioButton
-                          {...field}
-                          id="yes"
-                          value="true"
-                          isChecked={field.value === "true"}
-                          handleChange={field.onChange}
-                        >
-                          I'm experiencing at least one of these
-                        </RadioButton>
-                        <RadioButton
-                          {...field}
-                          id="no"
-                          value="false"
-                          isChecked={field.value === "false"}
-                          handleChange={field.onChange}
-                        >
-                          I do not have any of these
-                        </RadioButton>
-                      </div>
-                    </>
-                  )}
-                </Field>
-                <button
-                  ref={this.inputRef}
-                  type="submit"
-                  className="next-button"
-                  disabled={!values.anySymptoms}
-                  loading={false}
-                >
-                  Next
-                </button>
-              </form>
-            )}
-          />
-          {/*<div className="content">
-            <Formik
-              initialValues={initialValues}
-              enableReinitialize={true}
-              validationSchema={validationSchema}
-              onSubmit={(values, actions) => this.handleSubmit(values, actions)}
-              render={({
-                values,
-                errors,
-                status,
-                touched,
-                handleBlur,
-                handleChange,
-                handleSubmit,
-                isSubmitting,
+          <div className="form-screener">
+            <div class="title">Do you have any of the following?</div>
+            <ol>
+              <li>Do you have a <b>fever</b> (temperature over 100.4º F or 38º C) without having taken any fever-reducing medications?</li>
+              <li>Do you have a <b>loss of smell or taste?</b></li>
+              <li>Do you have a <b>cough?</b></li>
+              <li>Do you have <b>muscle aches?</b></li>
+              <li>Do you have a <b>sore throat?</b></li>
+              <li>Do you have <b>shortness of breath?</b></li>
+              <li>Do you have <b>chills?</b></li>
+              <li>Do you have a new or unusual <b>headache?</b></li>
+              <li>Have you experienced new onset of any <b>gastrointestinal symptoms</b> such as nausea, vomiting, diarrhea, or loss of appetite in the last few days?</li>
+            </ol>
+            <Field name="any_symptoms">
+              {({
+                field, // { name, value, onChange, onBlur }
+                form: {
+                  touched,
+                  errors,
+                  values,
+                  setFieldValue,
+                  setStatus,
+                  status
+                }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+                meta,
               }) => (
-                <form onSubmit={handleSubmit}>
-                  { loadedSurvey &&
-                    <>
-                      <div className="fields">
-                        {content.allIds.map((item, key) =>
-                          <div
-                            className={`field ${errors[item] && touched[item] && 'is-danger'}`}
-                            key={key}
-                          >
-                            <div className="label">{content.byId[item]}</div>
-                            <Field name={item}>
-                              {({
-                                field, // { name, value, onChange, onBlur }
-                                form: {
-                                  touched,
-                                  errors,
-                                  values,
-                                  setFieldValue,
-                                  setStatus,
-                                  status
-                                }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
-                                meta,
-                              }) => (
-                                <div className="control">
-                                  <Radio.Group
-                                    {...field}
-                                    buttonStyle="solid"
-                                  >
-                                    <Radio.Button value={true}>Yes</Radio.Button>
-                                    <Radio.Button value={false}>No</Radio.Button>
-                                  </Radio.Group>
-                                </div>
-                              )}
-                            </Field>
-                          </div>
-                        )}
-                      </div>
-                      <div className="submit-bar">
-                        <div className="progress">
-                          <span className="text">Progress:</span>
-                          <span className={`amount ${!isEmpty(errors) && !isEmpty(touched) && 'is-danger'}`}>
-                            {Object.keys(values).filter(k => values[k] != null).length}/{content.allIds.length}
-                          </span>
-                        </div>
-                        <Button
-                          htmlType="submit"
-                          className="submit-button"
-                          disabled={isSubmitting}
-                          loading={isSubmitting}
-                        >
-                          Submit
-                        </Button>
-                      </div>
-                    </>
-                  }
-                </form>
+                <>
+                  <ScrollTo
+                    inputRef={this.buttonRef}
+                    values={values}
+                    name={field.name}
+                  />
+                  <div className="control">
+                    <RadioButton
+                      {...field}
+                      id="yes"
+                      value="yes"
+                      isChecked={field.value === "yes"}
+                      handleChange={field.onChange}
+                    >
+                      I'm experiencing at least one of these
+                    </RadioButton>
+                    <RadioButton
+                      {...field}
+                      id="no"
+                      value="no"
+                      isChecked={field.value === "no"}
+                      handleChange={field.onChange}
+                    >
+                      I do not have any of these
+                    </RadioButton>
+                  </div>
+                </>
               )}
-            />
-          </div>*/}
+            </Field>
+            <NextButton ref={this.buttonRef}/>
+          </div>
         </div>
       </div>
     );

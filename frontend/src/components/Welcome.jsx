@@ -121,26 +121,25 @@ export default class Welcome extends Component {
             </nav>
             <Link to="/screener/consent" className="covid-check_wrapper">
               <div className="covid-check">
-                <div class="covid-check__top">
-                  <div class="covid-check__title-area">
-                    <div class="covid-check__image">
-                      {/*<img src={covid_check_icon}/>*/}
+                <div className="covid-check__top">
+                  <div className="covid-check__title-area">
+                    <div className="covid-check__image">
                       <img src={cc_logo}/>
                     </div>
-                    <div class="covid-check__title">
-                      <div class="covid_check__title__first">
+                    <div className="covid-check__title">
+                      <div className="covid_check__title__first">
                         symptom checker
                       </div>
-                      <div class="covid_check__title__second">
+                      <div className="covid_check__title__second">
                         Powered by Georgia Tech
                       </div>
                     </div>
                   </div>
-                  <div class="covid-check__start-button">
+                  <div className="covid-check__start-button">
                     Start
                   </div>
                 </div>
-                <div class="covid-check__bottom">
+                <div className="covid-check__bottom">
                   <div>Check your risk for COVID-19</div>
                   <div>and what to do next.</div>
                   {/*<span>Check if you might have COVID-19<span></br><span>and what to do next</span>*/}
