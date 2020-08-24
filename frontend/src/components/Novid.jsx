@@ -47,7 +47,7 @@ export default class Novid extends Component {
             </div>
             <p>Use the <a href="https://novid.org">NOVID</a> app to anonymously receive alerts about your potential exposure to COVID.  The app does not capture any personally identifiable information.  Full details on NOVID’s security, privacy, and use of permissions can be found <Link to="/privacy-evaluation">here</Link>.</p>
             <p>When you have installed the app, go to Settings and enter the <span>community code JACKETS to join the GT Community</span>.</p>
-            <p class="solid">IMPORTANT NOTICE: In order to record exposures, <b>iPhone users need to turn on NOVID Standby Mode whenever they aren’t using their phones</b>. Apple does not allow Bluetooth to operate when apps are in the background. Standby Mode allows you to keep NOVID running while preserving battery life.  Enter Standby Mode by hitting the purple button at the top of the Home screen.</p>
+            <p class="solid">IMPORTANT NOTICE: In order to record exposures, <b>iPhone users need to turn on NOVID Standby Mode whenever they aren’t using their phones</b>. Apple does not allow Bluetooth to operate when apps are in the background. Standby Mode allows you to keep NOVID running while preserving battery life.  To enter Standby Mode, hit the purple button at the top of the Home screen then leave the phone on.</p>
           </div>
           <div className="faq">
             <div className="header">Frequently Asked Questions</div>
