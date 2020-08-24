@@ -167,6 +167,11 @@
         font-family: 'BentonSans-Medium', 'Helvetica Neue', helvetica, arial, sans-serif;
       }
     }
+    .solid {
+        border-style: solid;
+        padding:5px;
+        }
+    .ridge {border-style: ridge;}
     .time {
       font-family: 'BentonSans', 'Helvetica Neue', helvetica, arial, sans-serif;
       color: #9e9e9e;

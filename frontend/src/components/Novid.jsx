@@ -47,6 +47,7 @@ export default class Novid extends Component {
             </div>
             <p>Use the <a href="https://novid.org">NOVID</a> app to anonymously receive alerts about your potential exposure to COVID.  The app does not capture any personally identifiable information.  Full details on NOVID’s security, privacy, and use of permissions can be found <Link to="/privacy-evaluation">here</Link>.</p>
             <p>When you have installed the app, go to Settings and enter the <span>community code JACKETS to join the GT Community</span>.</p>
+            <p class="solid">IMPORTANT NOTICE: In order to record exposures, <b>iPhone users need to turn on NOVID Standby Mode whenever they aren’t using their phones</b>. Apple does not allow Bluetooth to operate when apps are in the background. Standby Mode allows you to keep NOVID running while preserving battery life.  Enter Standby Mode by hitting the purple button at the top of the Home screen.</p>
           </div>
           <div className="faq">
             <div className="header">Frequently Asked Questions</div>
@@ -88,7 +89,7 @@ export default class Novid extends Component {
                 Is NOVID accurate in capturing exposures?
                 </div>
                 <div className="question-content">
-                See detailed performance metrics available on <a href="https://novid.org">novid.org</a> and in <a href="https://www.novid.org/downloads/20200625-accuracy.pdf">this study</a>. Because of iOS restrictions on running apps in the background, use of NOVID's low-power Standby Mode will significantly improve interaction detection involving iOS phones.  <span className="highlight">For iOS users, we recommend activating and leaving on NOVID Standby Mode whenever you enter a building, class, or gathering.</span>
+                See detailed performance metrics available on <a href="https://novid.org">novid.org</a> and in <a href="https://www.novid.org/downloads/20200625-accuracy.pdf">this study</a>. Because of iOS restrictions on running apps in the background, use of NOVID's low-power Standby Mode will significantly improve interaction detection involving iOS phones. For iOS users, we recommend activating and leaving on NOVID Standby Mode whenever you enter a building, class, or gathering.
                 </div>
               </div>
               <div className="question">
@@ -104,7 +105,9 @@ export default class Novid extends Component {
                 How do I notify others anonymously if I am diagnosed positive for Covid-19?
                 </div>
                 <div className="question-content">
-                If you get a positive test result at Stamps Health Center or via <a href="https://mytest.gatech.edu">mytest.gatech.edu</a> testing, you will receive a code that you can enter into the NOVID app to anonymously notify your contacts.
+                <p>If you get a positive test result at Stamps Health Center or via <a href="https://mytest.gatech.edu">mytest.gatech.edu</a> testing, you will receive a code that you can enter into the NOVID app to anonymously notify your contacts.</p>
+                <p> If you use Android, go to the Exposures tab -> “I tested positive for COVID-19" -> Link Official Results and enter in your code as well as the date of symptom onset.  Close contacts you had during your estimated infectious period will be notified without disclosing any of your personal information.</p>
+                <p>If you use iOS, there is a different procedure. (An issue in the current version of NOVID prevents using the regular submission feature, so while we are waiting Apple to approve the fix, the NOVID team developed a secondary method for exposure submissions.)  Please go the Settings Page and click Privacy Policy.  Click the purple button Submit Verified Report, enter your submission code and date of symptom onset if any. Close contacts you had during your estimated infectious period will be notified without disclosing any of your personal information. See <a href="https://youtu.be/xPEBZgwq9Po">video</a> for further details.</p>
                 </div>
               </div>
               <div className="question">
@@ -153,6 +156,14 @@ export default class Novid extends Component {
                 </div>
                 <div className="question-content">
                 The iOS version of NOVID has an experimental WiFi background mode which was released after GT's code review, so our privacy findings may not apply to this function. Thus we do not currently recommend activating this feature.
+                </div>
+              </div>
+              <div className="question">
+                <div className="question-header">
+                Can we create smaller NOVID communities within Georgia Tech to track exposures within clubs, dorms, or other organizations?
+                </div>
+                <div className="question-content">
+                NOVID can help protect smaller groups within our larger Georgia Tech community if there is very high adoption and usage of the app.  NOVID is rolling out a new feature to help smaller groups track what is happening in their community and encourage adoption. It is now possible for groups within Georgia Tech to request a local community code.  These codes can be given to clubs, dorms, or users of a common workshop or maker space.  Because this is a new feature, NOVID will issue codes to the first 15 groups who express interest while testing the feature and the feature will be available by the end of the week.  Users will be members of the Georgia Tech JACKETS community as well as of their local community.  To request a code, please email <a href="mailto:partnerships@novid.org">partnerships@novid.org</a> with the subject line "Georgia Tech Custom Community Request".  Include the desired name of the community, the desired community code, a square logo, and the default language for announcements (if not English).
                 </div>
               </div>
             </div>
