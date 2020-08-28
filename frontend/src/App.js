@@ -20,6 +20,7 @@ function App() {
       <Switch>
         <Route exact path="/welcome" component={Welcome}/>
         <Route exact path="/resources" component={Resources}/>
+        <Route exact path="/novidcheck" render={() => (window.location = "https://c19.ctisl.gtri.gatech.edu")}/>
         <Route exact path="/novid" component={Novid}/>
         <Route exact path="/privacy-evaluation" component={PrivacyEvaluation}/>
         <Route path="/screener" component={SymptomChecker}/>
