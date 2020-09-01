@@ -12,7 +12,8 @@ module.exports = {
         case 0:
           lastUpdated = moment($(element).text(), "MMMM DD, YYYY").format("MMM DD, YYYY");
         case 1:
-          newReportsToday = $(element).text();
+          //NOTE: Sept 1st, 2020: health.gatech.edu started using "*" in string.
+          newReportsToday = $(element).text().replace('*', '');
         case 2:
           totalReported = $(element).text();
       }
@@ -25,7 +26,7 @@ module.exports = {
   },
   table_2: function($) {
     let reports = [];
-    const secondTable = $('#node-558 table').eq(1);
+    const secondTable = $('#node-558 table').eq(2);
     $(secondTable).find('tbody > tr').each((index, element) => {
       let dateReported,
           position,
