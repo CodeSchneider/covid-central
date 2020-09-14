@@ -487,7 +487,7 @@ export default class Welcome extends Component {
                     // },
                     chartArea: {
                       top: 20,
-                      left: 15,
+                      left: 22,
                       bottom: 20,
                       right: 3
                     },
