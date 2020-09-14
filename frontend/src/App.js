@@ -10,6 +10,7 @@ import Welcome from './components/Welcome';
 import Resources from './components/Resources';
 import PrivacyEvaluation from './components/PrivacyEvaluation';
 import Novid from './components/Novid';
+import NovidExposure from './components/NovidExposure';
 import SymptomChecker from './components/SymptomChecker';
 import GA from './utils/GoogleAnalytics'
 
@@ -20,6 +21,7 @@ function App() {
       <Switch>
         <Route exact path="/welcome" component={Welcome}/>
         <Route exact path="/resources" component={Resources}/>
+        <Route exact path="/novidexposure" component={NovidExposure}/>
         <Route exact path="/novidcheck" render={() => (window.location = "https://c19.ctisl.gtri.gatech.edu")}/>
         <Route exact path="/novid" component={Novid}/>
         <Route exact path="/privacy-evaluation" component={PrivacyEvaluation}/>
