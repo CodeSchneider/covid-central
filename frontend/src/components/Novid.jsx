@@ -106,7 +106,7 @@ export default class Novid extends Component {
                 </div>
                 <div className="question-content">
                 <p>If you get a positive test result at Stamps Health Center or via <a href="https://mytest.gatech.edu">mytest.gatech.edu</a> testing, you will receive a code that you can enter into the NOVID app to anonymously notify your contacts.</p>
-                <p> Make sure you are running the latest version of NOVID. Go to the Exposures tab -> “I tested positive for COVID-19" -> Link Official Results --> input your code.  If you had symptoms, enter the date of symptom onset. Close contacts you had during your estimated infectious period will be notified without disclosing any of your personal information.</p>
+                <p> Make sure you are running the latest version of NOVID. Go to the Exposures tab -> “I tested positive for COVID-19" -> Link Official Results -> input your code.  If you had symptoms, enter the date of symptom onset. Close contacts you had during your estimated infectious period will be notified without disclosing any of your personal information.</p>
                 </div>
               </div>
               <div className="question">
@@ -154,7 +154,7 @@ export default class Novid extends Component {
                 Should I activate NOVID's WiFi Background Mode?
                 </div>
                 <div className="question-content">
-                The iOS version of NOVID has a WiFi background mode which enables detection of contacts who have shared the same WiFi network for a prolonged period.  It does not substitute for using the Standby Mode, but it will help make you aware of recent positive cases in your broader network.  WiFi mode requests permission for location information but does not use any GPS information per developer report.  It uses WiFi only. 
+                The iOS version of NOVID has a WiFi background mode which enables detection of contacts who have shared the same WiFi network for a prolonged period.  It does not substitute for using the Standby Mode, but it will help make you aware of recent positive cases in your broader network.  WiFi mode requests permission for location information but does not use any GPS information per developer report.  It uses WiFi only.
                 </div>
               </div>
               <div className="question">
